@@ -2,7 +2,7 @@
 
 ## Description
 
-The textarea component features an automatically adjusting height to afford variouse amounts of input. It also includes a max length / remaining character indicator.
+The textarea component features an automatically adjusting height to afford various amounts of input. It also includes a max length / remaining character indicator.
 
 ## To do
 
