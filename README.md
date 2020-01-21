@@ -1,4 +1,4 @@
-# 06_components_vue
+# Components Vue
 
 ## Project setup
 ```
