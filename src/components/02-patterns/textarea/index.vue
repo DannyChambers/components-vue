@@ -2,9 +2,9 @@
 <template>
 
   <div :class="classes">
-    <label :for="id" class="textarea_label">Comment</label>
+    <label :for="id" class="textarea_label">{{ label }}</label>
     <textarea v-model="text" :id="id" :name="id" @keyup="autosize" max-length="" class="textarea_input"></textarea>
-    <p class="textarea_message">{{charactersRemaining}} of {{this.maxCharacters}} characters remaining.</p>
+    <p class="textarea_message">{{ charactersRemaining }} of {{ this.maxCharacters }} characters remaining.</p>
   </div>
 
 </template>
@@ -36,7 +36,7 @@
         return `textarea ${this.classList}`;  
       },
       charactersRemaining: function () {
-        return this.maxCharacters - this.text.length;
+        return this.maxCharacters - this.text.length || this.maxCharacters;
       }
     },
     methods: {
