@@ -3,7 +3,7 @@
 
   <div :class="classes">
     <label :for="id" class="textarea_label">{{ label }}</label>
-    <textarea v-model="text" :id="id" :name="id" @keyup="autosize" max-length="" class="textarea_input"></textarea>
+    <textarea v-model="text" :id="id" :name="id" @keyup="autosize" :maxlength="maxLength" class="textarea_input"></textarea>
     <p class="textarea_message">{{ charactersRemaining }} of {{ this.maxCharacters }} characters remaining.</p>
   </div>
 
@@ -12,6 +12,14 @@
 <script>
   export default {
     props: {
+      classList: {
+        type: String,
+        default: "",
+      },
+      labelVisible: {
+        type: Boolean,
+        default: true
+      },
       id: {
         type: String,
         required: true
@@ -19,6 +27,9 @@
       label: {
         type: String,
         required: true
+      },
+      placeholder: {
+        type: String
       },
       maxLength: {
         type: Number,
@@ -36,7 +47,7 @@
         return `textarea ${this.classList}`;  
       },
       charactersRemaining: function () {
-        return this.maxCharacters - this.text.length || this.maxCharacters;
+        return (this.text.length < this.maxCharacters) ? (this.maxCharacters - this.text.length) : 0;
       }
     },
     methods: {
@@ -67,6 +78,7 @@
   @import "../../00-tokens/colours/_index";
   @import "../../00-tokens/fonts/_index";
   @import "../../00-tokens/dimensions/_index";
+
 
   @import "./_index";
 

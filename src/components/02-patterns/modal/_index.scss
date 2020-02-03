@@ -1,0 +1,46 @@
+
+.modal_overlay {
+	display: table;
+	width: 100%;
+	height: 100%;
+	padding: $spacing-half;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,.7);
+	z-index: 10;
+	cursor: default;
+
+	.modal {
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+		height: 100%;
+
+		.modal_content {
+			max-width: $breakpoint-1;
+			margin: 0 auto;
+			background: $background-colour-1;
+			padding:  $spacing-double;
+			position: relative;
+
+			.button--icononly {
+				width: $dimension-full;
+				height: $dimension-full;
+				line-height: $dimension-full;
+				padding: 0;
+				position: absolute;
+				top: 0;
+				right: 0;
+
+				.icon--close, .icon--close:before  {
+					display: block;
+					width: $dimension-full;
+					height: $dimension-full;
+					line-height: $dimension-full;
+					text-align: center;				
+				}
+			}
+		}
+	}
+}

@@ -1,20 +1,13 @@
 <template>
   <div id="app">
-	<Textarea  id="abc" label="Message" maxLength="140" />
+    <router-view/>
   </div>
 </template>
 
 <script>
-	import Textarea from './components/02-patterns/textarea/index.vue'
 
-	export default {
-		name: 'app',
-		components: {
-			Textarea
-		}
-	}
 </script>
 
-<style>
+<style lang="scss">
 
 </style>
