@@ -1,15 +1,19 @@
 <template>
-  <div>
-    
+  <div :class="classes">
+    <slot></slot>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'Today',
+    name: 'Layout',
     props: {
+      variant: String
     },
     computed: {
+      classes() {
+        return `layout layout--${this.variant}`;  
+      },
     },
     methods: {
     }
