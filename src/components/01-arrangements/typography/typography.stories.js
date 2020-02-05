@@ -17,11 +17,11 @@ storiesOf('Components/Arrangements/Typography', module)
     components: { H1, H2, H3, H4, H5 },
     template: `
     <div>
-        <H1 text="H1 The quick brown fox jumps over the lazy dog" />
-        <H2 text="H2 The quick brown fox jumps over the lazy dog" />
-        <H3 text="H3 The quick brown fox jumps over the lazy dog" />
-        <H4 text="H4 The quick brown fox jumps over the lazy dog" />
-        <H5 text="H5 The quick brown fox jumps over the lazy dog" />
+        <H1>H1 The quick brown fox jumps over the lazy dog</H1>
+        <H2>H2 The quick brown fox jumps over the lazy dog</H2>
+        <H3>H3 The quick brown fox jumps over the lazy dog</H3>
+        <H4>H4 The quick brown fox jumps over the lazy dog</H4>
+        <H5>H5 The quick brown fox jumps over the lazy dog</H5>
     </div>
     `
   }))
@@ -29,9 +29,9 @@ storiesOf('Components/Arrangements/Typography', module)
     components: { T1, T2, T3 },
     template: `
     <div>
-        <T1 text="T1 The quick brown fox jumps over the lazy dog" />
-        <T2 text="T2 The quick brown fox jumps over the lazy dog" />
-        <T3 text="T3 The quick brown fox jumps over the lazy dog" />
+        <T1>T1 The quick brown fox jumps over the lazy dog</T1>
+        <T2>T2 The quick brown fox jumps over the lazy dog</T2>
+        <T3>T3 The quick brown fox jumps over the lazy dog</T3>
     </div>
     `
   }));

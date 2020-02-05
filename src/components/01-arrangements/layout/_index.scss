@@ -1,81 +1,88 @@
 
 $gutter-full: $spacing-full;
 
-.layout {
-	display: flex;
+@media only screen and (min-width : $breakpoint-3){
 
-	.column {
-		padding-right: $gutter-full;
-		flex: 1 1 100%;
-
-		&:last-child {
-			padding-right: 0;
-		}
-	}
-
-	&.layout--50_50 {
+	.layout {
+		display: flex;
 
 		.column {
+			padding-right: $gutter-full;
+			flex: 1 1 100%;
 
+			&:last-child {
+				padding-right: 0;
+			}
 		}
-	}
 
-	&.layout--60_40 {
-		flex-basis: auto;
+		&.layout--50_50 {
 
-		.column {
+			.column {
+
+			}
+		}
+
+		&.layout--60_40 {
 			flex-basis: auto;
 
-			&:nth-child(1){
-				width: 60%;
-			}
+			.column {
+				flex-basis: auto;
 
-			&:nth-child(2){
-				width: 40%;
-			}
-		}
-	}
+				&:nth-child(1){
+					width: 60%;
+				}
 
-	&.layout--70_30 {
-
-		.column {
-			flex-basis: auto;
-
-			&:nth-child(1){
-				width: 70%;
-			}
-
-			&:nth-child(2){
-				width: 30%;
+				&:nth-child(2){
+					width: 40%;
+				}
 			}
 		}
-	}
 
-	&.layout--80_20 {
+		&.layout--70_30 {
 
-		.column {
-			flex-basis: auto;
+			.column {
+				flex-basis: auto;
 
-			&:nth-child(1){
-				width: 80%;
-			}
+				&:nth-child(1){
+					width: 70%;
+				}
 
-			&:nth-child(2){
-				width: 20%;
+				&:nth-child(2){
+					width: 30%;
+				}
 			}
 		}
-	}
 
-	&.layout--33_33_33 {
+		&.layout--80_20 {
 
-		.column {
+			.column {
+				flex-basis: auto;
 
+				&:nth-child(1){
+					width: 80%;
+				}
+
+				&:nth-child(2){
+					width: 20%;
+				}
+			}
+		}
+
+		&.layout--33_33_33 {
+
+			.column {
+
+			}
 		}
 	}
 }
 
 
-//Storybook stuff
+
+// ==========================================================
+//Styles related to the pattern library (Not for production)
+// ==========================================================
+
 .sb-show-main {
 
 	.layout {
@@ -113,3 +120,4 @@ $gutter-full: $spacing-full;
 		}
 	}
 }
+

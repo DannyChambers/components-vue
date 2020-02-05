@@ -2,18 +2,10 @@
 .textarea {
 	max-width: $breakpoint-2;
 
-	* {
-		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
-		outline: none;
-		font-family: $font-family-regular;
-	}
-
 	.textarea_label {
-		display: block;
-		font-size: 1.2rem;
-		line-height: 2rem;
+		font-size: $_16px;
+		line-height: $dimension-full;
+		font-family: $font-family-regular;
 	}
 
 	.textarea_input {
@@ -43,10 +35,25 @@
 	}
 
 	.textarea_message {
-		display: block;
-		font-size: 1rem;
-		line-height: 1.2rem;
+		margin-top: $spacing-half;
+		font-family: $font-family-regular;
 		text-align: right;
+
+		&.textarea_message--success {
+			color: $message-error;
+		}
+
+		&.textarea_message--information {
+			color: $message-information;
+		}
+
+		&.textarea_message--warning {
+			color: $message-warning;
+		}
+
+		&.textarea_message--error {
+			color: $message-success;
+		}
 	}
 }
 

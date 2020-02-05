@@ -4,13 +4,29 @@
   <div :class="classes">
     <label :for="id" class="textarea_label">{{ label }}</label>
     <textarea v-model="text" :id="id" :name="id" @keyup="autosize" :maxlength="maxLength" class="textarea_input"></textarea>
-    <p class="textarea_message">{{ charactersRemaining }} of {{ this.maxCharacters }} characters remaining.</p>
+    <T3 class="textarea_message textarea_message--information">{{ charactersRemaining }} of {{ this.maxCharacters }} characters remaining.</T3>
   </div>
 
 </template>
 
 <script>
+
+  //Tokens --
+
+  //Arrangements --
+  import T3 from            '../../01-arrangements/typography/t3.vue'
+
+  //Patterns --
+
+  //Modules --
+
+  //Pages --
+
+
   export default {
+    components: {
+      T3
+    },
     props: {
       classList: {
         type: String,

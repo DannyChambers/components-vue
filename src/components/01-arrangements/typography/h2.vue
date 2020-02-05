@@ -1,7 +1,7 @@
 
 <template>
   <h2 :class="classes">
-    {{text}}
+    <slot></slot>
   </h2>
 </template>
 
@@ -12,10 +12,6 @@
       classList:{
         type: String,
         default: "",
-      },
-      text: {
-        type: String,
-        required: true
       }
     },
     computed: {
