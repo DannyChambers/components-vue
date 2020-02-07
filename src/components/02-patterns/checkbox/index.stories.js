@@ -2,7 +2,7 @@
 import { storiesOf } from '@storybook/vue'
 //import { action } from '@storybook/addon-actions'
 
-import Checkbox from './index.vue'
+import Checkbox from './variant-1/component.vue'
 
 storiesOf('Components/Patterns/Checkbox', module)
   .add('Default', () => ({

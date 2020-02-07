@@ -2,7 +2,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/vue'
 
-import Icon from './index.vue'
+import Icon from './variant-1/component.vue'
 
 storiesOf('Components/Tokens/Icons', module)
   .add('Default', () => ({

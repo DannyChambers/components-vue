@@ -2,7 +2,7 @@
 import { storiesOf } from '@storybook/vue'
 //import { action } from '@storybook/addon-actions'
 
-import TextInput from './index.vue'
+import TextInput from './variant-1/component.vue'
 
 storiesOf('Components/Patterns/Text input', module)
   .add('Default', () => ({

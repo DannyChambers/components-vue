@@ -1,0 +1,30 @@
+
+.card {
+	max-width: 250px;
+	min-height: 150px;
+	border: 1px solid $line-colour-2;
+	border-radius: $border-radius-half;
+	font-family: $font-family-regular;
+
+	.card_title {
+		margin: 0;
+		padding: $spacing-half $spacing-full;
+		line-height: $dimension-full;
+	}
+
+	.card_content {
+		padding: $spacing-full;
+
+		:first-child {
+			margin-top: 0;
+		};
+	}
+}
+
+@media only screen and (min-width : $breakpoint-2){
+
+	.card {
+
+	}
+}
+

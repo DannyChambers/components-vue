@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/vue'
 
-import Button from './index.vue'
+import Button from './variant-1/component.vue'
 
 storiesOf('Components/Patterns/Button', module)
   .add('Primary', () => ({

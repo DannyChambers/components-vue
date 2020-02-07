@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 
-import Button from '../../02-patterns/button/index.vue'
-import ButtonGroup from './index.vue'
+import Button from '../../02-patterns/button/component.vue'
+import ButtonGroup from './variant-1/component.vue'
 
 storiesOf('Components/Arrangements/Button group', module)
   .add('Left', () => ({

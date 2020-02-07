@@ -1,0 +1,8 @@
+
+/*------------------------------------*\
+    #TRANSITIONS
+\*------------------------------------*/
+
+@mixin fadeIn($property) {
+	transition: $property .4s ease-in-out;
+}

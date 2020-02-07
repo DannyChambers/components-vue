@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from '../components/04-pages/home/index.vue'
+import Prototypes        from '../components/05-prototypes/index.vue'
+import PrototypeAlpha1  from '../components/05-prototypes/prototype-alpha_1/index.vue'
 
 Vue.use(VueRouter)
 
@@ -9,8 +10,13 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: Prototypes
   },
+  {
+    path: '/prototype-alpha-1',
+    name: 'prototype-alpha_1',
+    component: PrototypeAlpha1
+  }
 ]
 
 const router = new VueRouter({
