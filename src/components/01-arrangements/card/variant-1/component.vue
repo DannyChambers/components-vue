@@ -8,11 +8,6 @@
   export default {
     name: 'Card',
     props: {
-      variant: String,
-      text: {
-        type: String,
-        required: true
-      }
     },
     computed: {
       classes() {

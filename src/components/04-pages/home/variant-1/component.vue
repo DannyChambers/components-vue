@@ -6,9 +6,20 @@
 
       <H2>Home</H2>
 
-      <ul>
-        <li  v-for="user in users" :key="user.id">{{user.name}} {{user.status}} {{user.species}}</li>
-      </ul>
+      <Layout variant="25_25_25_25">
+
+        <div class="column" v-for="product in products" :key="product.id">
+
+          <Card>
+            <h2 class="card_title">{{product.title}}</h2>
+            <div class="card_content">
+              <T2>{{product.content}}</T2>
+            </div>
+          </Card>
+
+        </div>
+
+      </Layout>
 
       <Textarea id="comment" label="Comment" maxLength="140" />
 
@@ -25,7 +36,10 @@
 
   //Arrangements --
   import Container from     '@/components/01-arrangements/container/variant-1/component'
+  import Layout from        '@/components/01-arrangements/layout/variant-1/component'
   import H2 from            '@/components/01-arrangements/h2/variant-1/component'
+  import T2 from            '@/components/01-arrangements/t2/variant-1/component'
+  import Card from          '@/components/01-arrangements/card/variant-1/component'
 
   //Patterns --
   import Textarea from      '@/components/02-patterns/textarea/variant-1/component'
@@ -37,7 +51,7 @@
 
   export default {
     components: {
-      Container, H2, Textarea, Button
+      Container, Layout, Card, H2, T2, Textarea, Button
     },
     props: {
      
@@ -51,14 +65,14 @@
       classes() {
         return `home ${this.classList}`;  
       },
-      users() {
-        return this.$store.state;
+      products() {
+        return this.$store.state.products;
       }
     },
     methods: {
     },
     created() {
-      this.$store.dispatch('loadUsers');
+      this.$store.dispatch('loadProducts');
     }
   }
 

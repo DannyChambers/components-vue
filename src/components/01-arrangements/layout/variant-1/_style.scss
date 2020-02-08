@@ -4,11 +4,10 @@ $gutter-full: $spacing-full;
 @media only screen and (min-width : $breakpoint-3){
 
 	.layout {
-		display: flex;
+		display: grid;
+		grid-gap: 0 $spacing-full;
 
 		.column {
-			padding-right: $gutter-full;
-			flex: 1 1 100%;
 
 			&:last-child {
 				padding-right: 0;
@@ -16,6 +15,7 @@ $gutter-full: $spacing-full;
 		}
 
 		&.layout--50_50 {
+			grid-template-columns: 50% 50%;
 
 			.column {
 
@@ -23,52 +23,39 @@ $gutter-full: $spacing-full;
 		}
 
 		&.layout--60_40 {
-			flex-basis: auto;
+			grid-template-columns: 60% 40%;
 
 			.column {
-				flex-basis: auto;
 
-				&:nth-child(1){
-					width: 60%;
-				}
-
-				&:nth-child(2){
-					width: 40%;
-				}
 			}
 		}
 
 		&.layout--70_30 {
+			grid-template-columns: 70% 30%;
 
 			.column {
-				flex-basis: auto;
 
-				&:nth-child(1){
-					width: 70%;
-				}
-
-				&:nth-child(2){
-					width: 30%;
-				}
 			}
 		}
 
 		&.layout--80_20 {
+			grid-template-columns: 80% 20%;
 
 			.column {
-				flex-basis: auto;
 
-				&:nth-child(1){
-					width: 80%;
-				}
-
-				&:nth-child(2){
-					width: 20%;
-				}
 			}
 		}
 
 		&.layout--33_33_33 {
+			grid-template-columns: 33% 33% 33%;
+
+			.column {
+
+			}
+		}
+
+		&.layout--25_25_25_25 {
+			grid-template-columns: 25% 25% 25% 25%;
 
 			.column {
 

@@ -7,24 +7,27 @@ import VueAxios from "vue-axios";
 Vue.use(Vuex);
 Vue.use(VueAxios, axios);
 
-Vue.axios.defaults.baseURL = "https://rickandmortyapi.com/api/";
+Vue.axios.defaults.baseURL = "http://localhost:3000/";
 
 export default new Vuex.Store({
   state: {
-    users: []
+    products: []
   },
   actions: {
-    loadUsers({commit}) {
-      Vue.axios.get('character').then(result => {
-        commit('SAVE_USERS', result.data);
+    loadProducts({commit}) {
+      Vue.axios.get('products').then(result => {
+        commit('SAVE_PRODUCTS', result.data);
+        //console.log("Results from json-server: ", result.data);
       }).catch(error => {
         throw new Error(`API ${error}`);
       });
     }
   },
   mutations: {
-    SAVE_USERS(state, users) {
-      state.users = users.results;
+    SAVE_PRODUCTS(state, products) {
+      state.products = products;
+      //console.log("State in Vuex: ", state);
+      //console.log("Products in Vuex: ", state.products);
     }
   }
 })

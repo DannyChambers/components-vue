@@ -1,46 +1,11 @@
 import { storiesOf } from '@storybook/vue'
+import store from '@/store';
 
 import Home from './variant-1/component.vue'
 
-/*
-users[
-{
-  "info": {
-    "count": 1,
-    "pages": 1,
-    "next": "https://rickandmortyapi.com/api/character/?page=20",
-    "prev": "https://rickandmortyapi.com/api/character/?page=18"
-  },
-  "results": [
-    {
-      "id": 361,
-      "name": "Toxic Rick",
-      "status": "Dead",
-      "species": "Humanoid",
-      "type": "Rick's Toxic Side",
-      "gender": "Male",
-      "origin": {
-        "name": "Alien Spa",
-        "url": "https://rickandmortyapi.com/api/location/64"
-      },
-      "location": {
-        "name": "Earth",
-        "url": "https://rickandmortyapi.com/api/location/20"
-      },
-      "image": "https://rickandmortyapi.com/api/character/avatar/361.jpeg",
-      "episode": [
-        "https://rickandmortyapi.com/api/episode/27"
-      ],
-      "url": "https://rickandmortyapi.com/api/character/361",
-      "created": "2018-01-10T18:20:41.703Z"
-    }
-  ]
-}
-]
-*/
-
 storiesOf('Components/Pages/Home', module)
   .add('Signed out', () => ({
+  	store,
     components: { Home },
     template: '<Home />'
   }));

@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/vue'
 
-import T2 from            '../../01-arrangements/t2/variant-1/component.vue'
+import T2 from     '@/components/01-arrangements/t2/variant-1/component.vue'
 import Layout from './variant-1/component.vue'
 
 storiesOf('Components/Arrangements/Layout', module)
@@ -65,6 +65,40 @@ storiesOf('Components/Arrangements/Layout', module)
 				</div>
 				<div class="column">
 					<div style="background:#eee;min-height:150px;"><T2>Column 1</T2></div>
+				</div>
+				<div class="column">
+					<div style="background:#eee;min-height:150px;"><T2>Column 2</T2></div>
+				</div>
+				<div class="column">
+					<div style="background:#eee;min-height:150px;"><T2>Column 2</T2></div>
+				</div>
+				<div class="column">
+					<div style="background:#eee;min-height:150px;"><T2>Column 2</T2></div>
+				</div>
+				<div class="column">
+					<div style="background:#eee;min-height:150px;"><T2>Column 2</T2></div>
+				</div>
+			</Layout>
+		`
+	}))
+	.add('25-25-25-25', () => ({
+		components: { Layout, T2 },
+		template: `
+			<Layout variant="25_25_25_25">
+				<div class="column">
+					<div style="background:#eee;min-height:150px;"><T2>Column 1</T2></div>
+				</div>
+				<div class="column">
+					<div style="background:#eee;min-height:150px;"><T2>Column 1</T2></div>
+				</div>
+				<div class="column">
+					<div style="background:#eee;min-height:150px;"><T2>Column 2</T2></div>
+				</div>
+				<div class="column">
+					<div style="background:#eee;min-height:150px;"><T2>Column 2</T2></div>
+				</div>
+				<div class="column">
+					<div style="background:#eee;min-height:150px;"><T2>Column 2</T2></div>
 				</div>
 				<div class="column">
 					<div style="background:#eee;min-height:150px;"><T2>Column 2</T2></div>
