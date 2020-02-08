@@ -24,12 +24,12 @@
   //Tokens --
 
   //Arrangements --
-  import Container from     '../../01-arrangements/container/variant-1/component.vue'
-  import H2 from            '../../01-arrangements/h2/variant-1/component.vue'
+  import Container from     '@/components/01-arrangements/container/variant-1/component'
+  import H2 from            '@/components/01-arrangements/h2/variant-1/component'
 
   //Patterns --
-  import Textarea from      '../../02-patterns/textarea/variant-1/component.vue'
-  import Button from        '../../02-patterns/button/variant-1/component.vue'
+  import Textarea from      '@/components/02-patterns/textarea/variant-1/component'
+  import Button from        '@/components/02-patterns/button/variant-1/component'
 
   //Modules --
 

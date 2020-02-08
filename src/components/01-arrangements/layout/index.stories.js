@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/vue'
 
-import T2 from            '../../01-arrangements/t2/component.vue'
+import T2 from            '../../01-arrangements/t2/variant-1/component.vue'
 import Layout from './variant-1/component.vue'
 
 storiesOf('Components/Arrangements/Layout', module)

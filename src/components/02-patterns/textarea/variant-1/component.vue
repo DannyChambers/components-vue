@@ -14,7 +14,7 @@
   //Tokens --
 
   //Arrangements --
-  import T3 from            '../../01-arrangements/t3/component.vue'
+  import T3 from            '@/components/01-arrangements/t3/variant-1/component'
 
   //Patterns --
 

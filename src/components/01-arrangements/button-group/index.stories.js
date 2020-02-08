@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/vue'
 
-import Button from '../../02-patterns/button/component.vue'
+import Button from '../../02-patterns/button/variant-1/component.vue'
 import ButtonGroup from './variant-1/component.vue'
 
 storiesOf('Components/Arrangements/Button group', module)

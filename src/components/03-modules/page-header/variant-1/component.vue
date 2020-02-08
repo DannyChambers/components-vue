@@ -11,7 +11,7 @@
   //Tokens --
 
   //Arrangements --
-  import Container from     '../../01-arrangements/container/variant-1/component.vue'
+  import Container from     '@/components/01-arrangements/container/variant-1/component'
 
   //Patterns --
 

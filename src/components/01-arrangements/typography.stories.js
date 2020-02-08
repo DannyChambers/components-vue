@@ -3,16 +3,16 @@
 import { storiesOf } from '@storybook/vue'
 //import { action } from '@storybook/addon-actions'
 
-import H1 from "./h1/component.vue";
-import H2 from "./h2/component.vue";
-import H3 from "./h3/component.vue";
-import H4 from "./h4/component.vue";
-import H5 from "./h5/component.vue";
-import T1 from "./t1/component.vue";
-import T2 from "./t2/component.vue";
-import T3 from "./t3/component.vue";
-import Ul from "./ul/component.vue";
-import Ol from "./ol/component.vue";
+import H1 from "./h1/variant-1/component.vue";
+import H2 from "./h2/variant-1/component.vue";
+import H3 from "./h3/variant-1/component.vue";
+import H4 from "./h4/variant-1/component.vue";
+import H5 from "./h5/variant-1/component.vue";
+import T1 from "./t1/variant-1/component.vue";
+import T2 from "./t2/variant-1/component.vue";
+import T3 from "./t3/variant-1/component.vue";
+import Ul from "./ul/variant-1/component.vue";
+import Ol from "./ol/variant-1/component.vue";
 
 storiesOf('Components/Arrangements/Typography', module)
   .add('Headings', () => ({

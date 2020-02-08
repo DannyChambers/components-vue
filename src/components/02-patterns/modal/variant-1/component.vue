@@ -19,7 +19,7 @@
 <script>
 
   //Tokens --
-  import Icon from          '../../00-tokens/icon/component.vue'
+  import Icon from          '@/components/00-tokens/icon/variant-1/component.vue'
 
   //Arrangements --
 

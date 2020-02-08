@@ -16,8 +16,8 @@
   //Tokens --
 
   //Arrangements --
-  import Container from     '../../../components/01-arrangements/container/variant-1/component.vue'
-  import H2 from            '../../../components/01-arrangements/h2/variant-1/component.vue'
+  import Container from     '@/components/01-arrangements/container/variant-1/component.vue'
+  import H2 from            '@/components/01-arrangements/h2/variant-1/component.vue'
 
   //Patterns --
 
