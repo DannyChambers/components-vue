@@ -6,3 +6,7 @@
 @mixin fadeIn($property) {
 	transition: $property .4s ease-in-out;
 }
+
+@mixin slide($property) {
+	transition: $property .4s ease-in-out;
+}

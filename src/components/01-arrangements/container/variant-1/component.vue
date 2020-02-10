@@ -8,11 +8,15 @@
   export default {
     name: 'Container',
     props: {
+      classList:{
+        type: String,
+        default: "",
+      },
       variant: String
     },
     computed: {
       classes() {
-        return `container`;  
+        return `container ${this.classList}`;  
       },
     },
     methods: {
@@ -23,10 +27,10 @@
 <style lang="scss" scoped>
 
   //Tokens --
-  @import "../../../00-tokens/colours/variant-1/_style";
-  @import "../../../00-tokens/fonts/variant-1/_style";
-  @import "../../../00-tokens/dimensions/variant-1/_style";
-  @import "../../../00-tokens/transitions/variant-1/_style";
+  @import "@/components/00-tokens/colours/variant-1/_style";
+  @import "@/components/00-tokens/fonts/variant-1/_style";
+  @import "@/components/00-tokens/dimensions/variant-1/_style";
+  @import "@/components/00-tokens/transitions/variant-1/_style";
 
   @import "./_style";
 

@@ -54,6 +54,10 @@
       Container, Layout, Card, H2, T2, Textarea, Button
     },
     props: {
+      classList:{
+        type: String,
+        default: "",
+      },
      
     },
     data: function () {

@@ -24,15 +24,17 @@
     components: {
       Home
     },
+    name: 'PrototypeAlpha1',
     props: {
-     
-    },
-    data: function () {
-      return {
-     
+      classList:{
+        type: String,
+        default: "",
       }
     },
     computed: {
+      classes() {
+        return `page-header ${this.classList}`;  
+      },
     },
     methods: {
     }

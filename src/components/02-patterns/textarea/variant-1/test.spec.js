@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils";
-import Textarea from './variant-1/component.vue'
+import Textarea from './component.vue'
 
 describe('Textarea', () => {
 	test('character count decreases when typing', () => {
@@ -8,7 +8,7 @@ describe('Textarea', () => {
 				id: 'xyz',
 				name: 'xyz',
 				label: 'Comment',
-				maxLength: 140
+				maxLength: "140"
 			}
 		})
 		let tm = wrapper.find('.textarea_message')
@@ -23,7 +23,7 @@ describe('Textarea', () => {
 				id: 'xyz',
 				name: 'xyz',
 				label: 'Comment',
-				maxLength: 140
+				maxLength: "140"
 			}
 		})
 		let tm = wrapper.find('.textarea_message')

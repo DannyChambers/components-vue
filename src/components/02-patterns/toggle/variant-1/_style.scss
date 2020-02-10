@@ -1,0 +1,58 @@
+
+.toggle {
+
+	.toggle_label {
+		font-size: $_16px;
+		line-height: $dimension-full;
+		font-family: $font-family-regular;
+	}
+
+	.toggle_switch {
+		background: $line-colour-2;
+		width: calc(#{$dimension-double} - #{$dimension-quarter});
+		height: calc(#{$dimension-full} - 2px);
+		border: 1px solid $line-colour-1;
+		border-radius: $dimension-full;
+		position: relative;
+		overflow: hidden;
+
+		em {
+			display: block;
+			width: $dimension-double;
+			height: $dimension-full;
+			background: $message-success;
+			position: absolute;
+			top: -1px;
+			left: 0;
+			@include slide(opacity);
+			opacity: 0;
+		}
+
+		.toggle_input {
+			-webkit-appearance: none;
+			display: block;
+			width: $dimension-full;
+			height: $dimension-full;
+			background: $line-colour-1;
+			border-radius: $dimension-full;
+			cursor: pointer;
+			position: absolute;
+			top: -4px;
+			left: -4px;
+			z-index: 99;
+			@include slide(left);
+
+			&:focus {
+				outline: none;
+			}
+
+			&:checked {
+				left: calc(#{$dimension-full} - #{$dimension-quarter});
+			}
+
+			&:checked + em {
+				opacity: 1;
+			}
+		}
+	}
+}

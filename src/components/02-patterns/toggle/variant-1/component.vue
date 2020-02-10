@@ -1,13 +1,16 @@
-
 <template>
-  <ul :class="classes">
-    <slot></slot>
-  </ul>
+  <div :class="classes">
+    <label for="{id}" class="toggle_label">{{labelText}}</label>
+    <div class="toggle_switch">
+      <input type="checkbox" id="{id}" class="toggle_input" />
+      <em></em>
+    </div>
+  </div>
 </template>
 
 <script>
   export default {
-    name: 'Ul',
+    name: 'Button',
     props: {
       classList:{
         type: String,
@@ -16,14 +19,25 @@
       classList:{
         type: String,
         default: "",
+      },
+      id: {
+        type: String,
+        required: true
+      },
+      labelText: {
+        type: String,
+        required: true
       }
     },
     computed: {
       classes() {
-        return `ul ${this.classList}`;
+        return `toggle ${this.classList}`;  
       },
     },
     methods: {
+      onClick() {
+        this.$emit('click')
+      }
     }
   }
 </script>

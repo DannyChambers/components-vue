@@ -39,6 +39,10 @@
         type: String,
         default: "",
       },
+      classList:{
+        type: String,
+        default: "",
+      },
       open: {
         type: Boolean,
         required: true,
@@ -59,10 +63,10 @@
 <style lang="scss" scoped>
 
   //Tokens --
-  @import "../../../00-tokens/colours/variant-1/_style";
-  @import "../../../00-tokens/fonts/variant-1/_style";
-  @import "../../../00-tokens/dimensions/variant-1/_style";
-  @import "../../../00-tokens/transitions/variant-1/_style";
+  @import "@/components/00-tokens/colours/variant-1/_style";
+  @import "@/components/00-tokens/fonts/variant-1/_style";
+  @import "@/components/00-tokens/dimensions/variant-1/_style";
+  @import "@/components/00-tokens/transitions/variant-1/_style";
 
   @import "./_style";
 

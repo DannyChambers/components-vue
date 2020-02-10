@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Prototypes        from '../components/05-prototypes/index.vue'
-import PrototypeAlpha1  from '../components/05-prototypes/prototype-alpha_1/index.vue'
+import Prototypes         from '@/prototypes/index.vue'
+import PrototypeAlpha1    from '@/prototypes/prototype-alpha_1/index.vue'
 
 Vue.use(VueRouter)
 

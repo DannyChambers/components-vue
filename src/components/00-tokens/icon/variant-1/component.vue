@@ -8,12 +8,16 @@
   export default {
     name: 'Icon',
     props: {
+      classList:{
+        type: String,
+        default: "",
+      },
       icon_placement: String,
       icon_graphic: String,
     },
     computed: {
       classes() {
-        return `icon--${this.icon_placement} icon--${this.icon_graphic}`;  
+        return `icon--${this.icon_placement} icon--${this.icon_graphic} ${this.classList}`;  
       },
     },
     methods: {
@@ -24,10 +28,10 @@
 <style lang="scss" scoped>
 
   //Tokens --
-  @import "../../../00-tokens/colours/variant-1/_style";
-  @import "../../../00-tokens/fonts/variant-1/_style";
-  @import "../../../00-tokens/dimensions/variant-1/_style";
-  @import "../../../00-tokens/transitions/variant-1/_style";
+  @import "@/components/00-tokens/colours/variant-1/_style";
+  @import "@/components/00-tokens/fonts/variant-1/_style";
+  @import "@/components/00-tokens/dimensions/variant-1/_style";
+  @import "@/components/00-tokens/transitions/variant-1/_style";
 
   @import "./_style";
 
