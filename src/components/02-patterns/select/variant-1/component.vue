@@ -1,16 +1,18 @@
 <template>
   <div :class="classes">
-    <label for="{id}" class="toggle_label">{{labelText}}</label>
-    <div class="toggle_switch">
-      <input type="checkbox" id="{id}" class="toggle_input" />
-      <em></em>
-    </div>
+    <label for="{id}" class="select_label">{{labelText}}</label>
+    
+    <select class="select_input">
+      <option v-for="option in options">{{option}}</option>
+    </select>
+    <span></span>
+
   </div>
 </template>
 
 <script>
   export default {
-    name: 'Toggle',
+    name: 'Select',
     props: {
       classList:{
         type: String,
@@ -25,15 +27,23 @@
         required: true
       }
     },
+    data: function() {
+      return {
+        options: [
+          "Option one",
+          "Option two",
+          "Option three",
+          "Option four",
+          "Option five",        ]
+      }
+    },
     computed: {
       classes() {
-        return `toggle ${this.classList}`;  
-      },
+        return `select ${this.classList}`;  
+      }
     },
     methods: {
-      onClick() {
-        this.$emit('click')
-      }
+
     }
   }
 </script>

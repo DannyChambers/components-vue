@@ -1,0 +1,63 @@
+
+.select {
+	position: relative;
+	max-width: $breakpoint-2; 
+
+	.select_label {
+		font-size: $_16px;
+		line-height: $dimension-full;
+		font-family: $font-family-regular;
+	}
+
+	.select_input {
+		display: block;
+		box-sizing: border-box;
+		display: block;
+		width: 100%;
+		padding: $spacing-quarter;
+		border: 1px solid $line-colour-1;
+		border-radius: 0;
+		line-height: $dimension-half;
+		font-size: $_16px;
+		font-family: $font-family-regular;
+		height: $dimension-full;
+		-webkit-appearance: none;
+		background: transparent;
+		@include fadeIn(border-color);
+		position: relative;
+		z-index: 2;
+
+		&:hover {
+			border-color: $action-colour;
+		}
+
+		&:focus, &:active {
+			outline: none;
+			border-color: $active-colour;
+		}
+
+		&:focus + span:after {
+			//transform: rotate(180deg);
+		}
+	}
+
+	span {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		
+		&:after {
+			content: "\e902";
+			font-family: $font-family-icon;
+			display: block;
+			width: $dimension-full;
+			height: $dimension-full;
+			line-height: $dimension-full;
+			text-align: center;
+			font-size: $_30px;
+			color: $line-colour-1;
+			z-index: 1;
+		}
+	}
+}

@@ -20,7 +20,7 @@
 		height: $dimension-full;
 		-webkit-appearance: none;
 		background: $background-colour-1;
-		transition: border-color .3s ease-in-out;
+		@include fadeIn(border-color);
 
 		&:hover {
 			border-color: $action-colour;
@@ -36,7 +36,7 @@
 		font-family: $font-family-regular;
 
 		&.text-input_message--success {
-			color: $message-error;
+			color: $message-success;
 		}
 
 		&.text-input_message--information {
@@ -48,7 +48,7 @@
 		}
 
 		&.text-input_message--error {
-			color: $message-success;
+			color: $message-error;
 		}
 	}
 }

@@ -15,6 +15,15 @@
 		border-radius: $dimension-full;
 		position: relative;
 		overflow: hidden;
+		@include fadeIn(border-color);
+
+		&:hover {
+			border-color: $action-colour;
+		}
+
+		&:focus, &:active {
+			border-color: $active-colour;
+		}
 
 		em {
 			display: block;
