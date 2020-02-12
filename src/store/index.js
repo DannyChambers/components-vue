@@ -11,23 +11,35 @@ Vue.axios.defaults.baseURL = "http://localhost:3000/";
 
 export default new Vuex.Store({
   state: {
+    users: [],
     products: []
   },
   actions: {
-    loadProducts({commit}) {
-      Vue.axios.get('products').then(result => {
-        commit('SAVE_PRODUCTS', result.data);
-        //console.log("Results from json-server: ", result.data);
+    loadData({commit}, endpoint) {
+      //console.log("loadData");
+      Vue.axios.get(endpoint).then(result => {
+        let payload = {'endpoint': endpoint, 'result': result.data};
+        commit('SAVE_DATA', payload);
       }).catch(error => {
         throw new Error(`API ${error}`);
       });
     }
   },
   mutations: {
-    SAVE_PRODUCTS(state, products) {
-      state.products = products;
-      //console.log("State in Vuex: ", state);
-      //console.log("Products in Vuex: ", state.products);
+    SAVE_DATA(state, payload) {
+
+      //Need to assign data based on endpoint here --
+
+      if(payload.endpoint === "users"){
+
+        state.users = payload.result;
+
+      } else if(payload.endpoint === "products"){
+
+        state.products = payload.result;
+
+      }
     }
   }
 })
+

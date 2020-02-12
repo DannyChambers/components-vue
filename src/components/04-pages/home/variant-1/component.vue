@@ -56,9 +56,8 @@
     props: {
       classList:{
         type: String,
-        default: "",
-      },
-     
+        default: ""
+      }
     },
     data: function () {
       return {
@@ -76,7 +75,7 @@
     methods: {
     },
     created() {
-      this.$store.dispatch('loadProducts');
+      this.$store.dispatch('loadData', 'products');
     }
   }
 
