@@ -37,33 +37,16 @@ import PieChart     from './pie-chart.vue'
 export default {
   name: 'Chart',
   components: { BarChart, LineChart, AreaChart, RadarChart, PieChart },
-  data: () => ({
-    loaded: false,
-    chartdata: {//Different data formats will be required to fuel some charts (Area, Radar, Pie etc.)
-      labels: ['January', 'February', 'March'],
-      datasets: [
-        {
-          label: 'Data One',
-          backgroundColor: '#f87979',
-          data: [60, 40, 100]
-        },
-        {
-          label: 'Data Two',
-          backgroundColor: '#B448C9',
-          data: [80, 20, 120]
-        },
-        {
-          label: 'Data Three',
-          backgroundColor: '#1EFDED',
-          data: [40, 100, 20]
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false
-    }
-  }),
+  data() {
+    return {
+      loaded: false,
+      chartData: {
+        Books: 24,
+        Magazine: 30,
+        Newspapers: 10
+      }
+    };
+  },
   props: {
     classList: {
       type: String,

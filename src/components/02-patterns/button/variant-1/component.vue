@@ -1,10 +1,12 @@
 <template>
-  <button :class="classes">
+  <button :class="classes" @click="onClick">
     {{text}}
+    <slot></slot>
   </button>
 </template>
 
 <script>
+
   export default {
     name: 'Button',
     props: {
@@ -14,8 +16,7 @@
       },
       variant: String,
       text: {
-        type: String,
-        required: true
+        type: String
       }
     },
     computed: {
@@ -25,6 +26,7 @@
     },
     methods: {
       onClick() {
+        console.log("Called onClick in button");
         this.$emit('click')
       }
     }

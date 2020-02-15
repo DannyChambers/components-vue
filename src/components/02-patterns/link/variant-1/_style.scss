@@ -6,7 +6,7 @@
 	text-decoration: none;
 
 	.link_text {
-		@include fadeIn(border-color);		
+		@include fadeIn(border-color);	
 	}
 
 	&.link--inline {

@@ -16,10 +16,6 @@
         type: String,
         default: "",
       },
-      classList:{
-        type: String,
-        default: "",
-      },
       text: {
         type: String,
         required: true

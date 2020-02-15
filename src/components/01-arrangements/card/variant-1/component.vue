@@ -12,10 +12,6 @@
         type: String,
         default: "",
       },
-      classList:{
-        type: String,
-        default: "",
-      },
     },
     computed: {
       classes() {

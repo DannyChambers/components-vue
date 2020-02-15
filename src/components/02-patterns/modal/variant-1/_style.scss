@@ -24,7 +24,7 @@
 			padding:  $spacing-double;
 			position: relative;
 
-			.button--icononly {
+			.button.button--icononly {
 				width: $dimension-full;
 				height: $dimension-full;
 				line-height: $dimension-full;
@@ -40,6 +40,16 @@
 					line-height: $dimension-full;
 					text-align: center;				
 				}
+			}
+			
+			.modal_title {
+				margin: 0 0 $dimension-half 0;
+				padding: 0;
+				line-height: $dimension-full;
+				border-bottom: 1px solid $line-colour-1;
+				font-family: $font-family-heading;
+				font-size: $_22px;
+
 			}
 		}
 	}

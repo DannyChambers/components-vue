@@ -12,12 +12,12 @@
         type: String,
         default: "",
       },
-      icon_placement: String,
-      icon_graphic: String,
+      iconPlacement: String,
+      iconGraphic: String,
     },
     computed: {
       classes() {
-        return `icon--${this.icon_placement} icon--${this.icon_graphic} ${this.classList}`;  
+        return `icon--${this.iconPlacement} icon--${this.iconGraphic} ${this.classList}`;  
       },
     },
     methods: {

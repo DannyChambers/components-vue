@@ -23,14 +23,20 @@
 
       <Textarea id="comment" label="Comment" maxLength="140" />
 
-      <Button variant="primary" text="Submit" />
-      
+      <Modal title="This is a modal" initialState="hidden">
+        <T2>Some modal content</T2>
+      </Modal>
+      <Button variant="secondary" text="Open modal" @click="openModal" />
+  
     </Container>
   </div>
 
 </template>
 
 <script>
+
+  //Event bus --
+  import { eventBus } from "@/events/index";
   
   //Tokens --
 
@@ -44,14 +50,16 @@
   //Patterns --
   import Textarea from      '@/components/02-patterns/textarea/variant-1/component'
   import Button from        '@/components/02-patterns/button/variant-1/component'
+  import Modal from         '@/components/02-patterns/modal/variant-1/component'
 
   //Modules --
 
   //Pages --
 
   export default {
+    name: 'Home',
     components: {
-      Container, Layout, Card, H2, T2, Textarea, Button
+      Container, Layout, Card, H2, T2, Textarea, Button, Modal
     },
     props: {
       classList:{
@@ -73,6 +81,10 @@
       }
     },
     methods: {
+      openModal (){
+        //console.log("Called openModal in Home");
+        eventBus.$emit('openModal')
+      }
     },
     created() {
       this.$store.dispatch('loadData', 'products');

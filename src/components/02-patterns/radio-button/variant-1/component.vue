@@ -16,10 +16,6 @@
         type: String,
         default: "",
       },
-      classList:{
-        type: String,
-        default: "",
-      },
       groupname: {
         type: String,
         required: true
