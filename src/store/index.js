@@ -11,8 +11,16 @@ Vue.axios.defaults.baseURL = "http://localhost:3000/";
 
 export default new Vuex.Store({
   state: {
-    users: [],
-    products: []
+    ui: {
+      loggedIn: false,
+      modal: {
+        visible: null
+      } 
+    },
+    data: {
+      users: [],
+      products: []
+    }
   },
   actions: {
     loadData({commit}, endpoint) {
@@ -32,11 +40,11 @@ export default new Vuex.Store({
 
       if(payload.endpoint === "users"){
 
-        state.users = payload.result;
+        state.data.users = payload.result;
 
       } else if(payload.endpoint === "products"){
 
-        state.products = payload.result;
+        state.data.products = payload.result;
 
       }
     }

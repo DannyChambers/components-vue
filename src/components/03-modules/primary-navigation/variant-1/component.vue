@@ -26,10 +26,6 @@
       classList:{
         type: String,
         default: "",
-      },
-      classList:{
-        type: String,
-        default: "",
       }
     },
     data() {
@@ -47,7 +43,7 @@
         return `primary-navigation ${this.classList}`;  
       },
       navItems() {
-        if(false){//Look for logged in state here
+        if(this.$store.state.ui.loggedIn === true){
           return this.loggedIn.items
         } else {
           return this.loggedOut.items

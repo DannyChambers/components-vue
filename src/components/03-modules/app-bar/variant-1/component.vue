@@ -1,45 +1,51 @@
 <template>
-  <a :href="href" :target="target" :class="classes" @click="onClick">
-    <span class="link_text">
-      {{text}}
-    </span>
-  </a>
+  <div :class="classes">
+
+    <ul class="app-bar_list">
+      <li  v-for="navItem in navItems" :key="navItem"><router-link to="/">{{navItem}}</router-link></li>
+    </ul>
+
+  </div>
 </template>
 
 <script>
+
+  //Tokens --
+
+  //Arrangements --
+
+  //Patterns --
+
+  //Modules --
+
+  //Pages --
+
   export default {
-    name: 'Link',
+    name: 'AppBar',
     props: {
       classList:{
         type: String,
         default: "",
       },
-      variant: {
+      classList:{
         type: String,
-        defaut: "inline"
-      },
-      href: {
-        type: String,
-        required: true
-      },
-      target: {
-        type: String,
-        default: ""
-      },
-      text: {
-        type: String,
-        required: true
+        default: "",
+      }
+    },
+    data() {
+      return {
+        navitems: ['Item one', 'Item two', 'Item three', 'Item four', 'Item five']
       }
     },
     computed: {
       classes() {
-        return `link link--${this.variant} ${this.classList}`;  
+        return `app-bar ${this.classList}`;  
       },
+      navItems() {
+          return this.navitems
+      }
     },
     methods: {
-      onClick() {
-        this.$emit('click')
-      }
     }
   }
 </script>

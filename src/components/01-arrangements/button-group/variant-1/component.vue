@@ -13,10 +13,6 @@
         default: "",
       },
       variant: String,
-      classList:{
-        type: String,
-        default: "",
-      },
       text: {
         type: String,
         required: true

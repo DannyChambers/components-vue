@@ -16,9 +16,6 @@
 </template>
 
 <script>
-
-  //Event bus --
-  import { eventBus } from "@/events/index";
   
   //Tokens --
 
@@ -35,7 +32,7 @@
 
   export default {
     components: {
-      eventBus, Container, H2, T2
+      Container, H2, T2
     },
     props: {
       classList:{

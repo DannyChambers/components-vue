@@ -26,7 +26,6 @@
     },
     methods: {
       onClick() {
-        console.log("Called onClick in button");
         this.$emit('click')
       }
     }
