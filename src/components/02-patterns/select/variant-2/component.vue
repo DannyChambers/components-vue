@@ -2,15 +2,15 @@
   <div :class="classes">
     <label for="{id}" class="select_label">{{labelText}}</label>
     
-    <div v-if="options.length > 4">
+    <div v-if="generateOptions.length > 4">
       <select class="select_input" id="{id}">
-        <option v-for="option in options">{{option}}</option>
+        <option v-for="option in generateOptions">{{option}}</option>
       </select>
       <span></span>
     </div>
 
     <div v-else>
-      <label v-for="option in options" class="select_label select_label--button">
+      <label v-for="option in generateOptions" class="select_label select_label--button">
         <input type="radio"  name="{id}"/>
         <span>{{option}}</span>
       </label>
@@ -34,21 +34,23 @@
       labelText: {
         type: String,
         required: true
+      },
+      options: {
+        type: String,
+        required: true
       }
     },
     data: function() {
       return {
-        options: [
-          "Option one",
-          "Option two",
-          "Option three"
-        ]
       }
     },
     computed: {
       classes() {
         return `select ${this.classList}`;  
-      }
+      },
+      generateOptions() {
+        return this.options.split(',');
+      },
     },
     methods: {
 

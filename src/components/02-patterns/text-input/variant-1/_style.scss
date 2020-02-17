@@ -26,7 +26,8 @@
 			border-color: $action-colour;
 		}
 
-		&:focus, &:active {
+		&:focus {
+			outline: none;
 			border-color: $active-colour;
 		}
 	}

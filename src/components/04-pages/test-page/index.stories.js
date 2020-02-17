@@ -1,11 +1,11 @@
 import { storiesOf } from '@storybook/vue'
 import store from '@/store';
 
-import Home from './variant-1/component.vue'
+import TestPage from './variant-1/component.vue'
 
-storiesOf('Components/Pages/Home', module)
-  .add('Signed out', () => ({
+storiesOf('Components/Pages/Test page', module)
+  .add('Default', () => ({
   	store,
-    components: { Home },
-    template: '<Home />'
+    components: { TestPage },
+    template: '<TestPage />'
   }));

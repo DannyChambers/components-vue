@@ -1,6 +1,8 @@
 <template>
   <div :class="classes">
-    <slot></slot>
+    <div class="pane_vertical">
+      <slot></slot>
+    </div>
   </div>
 </template>
 

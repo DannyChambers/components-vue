@@ -3,7 +3,7 @@
     <label for="{id}" class="select_label">{{labelText}}</label>
     
     <select class="select_input">
-      <option v-for="option in options">{{option}}</option>
+      <option v-for="option in generateOptions">{{option}}</option>
     </select>
     <span></span>
 
@@ -25,22 +25,23 @@
       labelText: {
         type: String,
         required: true
+      },
+      options: {
+        type: String,
+        required: true
       }
     },
     data: function() {
       return {
-        options: [
-          "Option one",
-          "Option two",
-          "Option three",
-          "Option four",
-          "Option five",        ]
       }
     },
     computed: {
       classes() {
         return `select ${this.classList}`;  
-      }
+      },
+      generateOptions() {
+        return this.options.split(',');
+      },
     },
     methods: {
 
