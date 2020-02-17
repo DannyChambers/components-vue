@@ -1,5 +1,4 @@
 
-
 .icon--before, .icon--after {
 
 	&:before, &:after {
@@ -120,6 +119,30 @@
 	}
 
 }
+
+.token-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .list_item {
+        margin: 0;
+        color: #666;
+
+        > div {
+            border: 1px solid #ccc;
+            border-width: 1px 0 0 0;
+			padding: 20px;
+			
+			.icon--before {
+				display: block;
+				color: $brand-1;
+				font-size: $_30px;
+			}
+        }
+    }
+}
+
 
 
 
