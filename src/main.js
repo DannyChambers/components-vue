@@ -3,8 +3,11 @@ import App from './App.vue'
 import store from './store'
 import router from './router'
 import './registerServiceWorker'
+import scrollobserver from './directives/scroll-into-view'
 
 Vue.config.productionTip = false
+
+Vue.directive('scrollobserver', scrollobserver);
 
 new Vue({
   store,

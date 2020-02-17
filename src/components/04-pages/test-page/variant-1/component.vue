@@ -2,41 +2,59 @@
 <template>
 
   <div :class="classes">
-    <Container>
 
-      <H2>Home</H2>
+    <Pane v-scrollobserver>
 
-      <PrimaryNavigation />
+      <Container>
 
-    <ButtonGroup variant="left">
-      <Button variant="primary" text="Log in" @click="logIn()" />
-      <Button variant="secondary" text="Log out" @click="logOut()" />
-    </ButtonGroup>
+        <H2>Home</H2>
 
-      <Layout variant="25_25_25_25">
+        <PrimaryNavigation />
 
-        <div class="column" v-for="product in products" :key="product.id">
+        <ButtonGroup variant="left">
+          <Button variant="primary" text="Log in" @click="logIn()" />
+          <Button variant="secondary" text="Log out" @click="logOut()" />
+        </ButtonGroup>
 
-          <Card>
-            <h2 class="card_title">{{product.title}}</h2>
-            <div class="card_content">
-              <T2>{{product.content}}</T2>
-            </div>
-          </Card>
+        <Layout variant="25_25_25_25">
 
-        </div>
+          <div class="column" v-for="product in products" :key="product.id">
 
-      </Layout>
+            <Card>
+              <h2 class="card_title">{{product.title}}</h2>
+              <div class="card_content">
+                <T2>{{product.content}}</T2>
+              </div>
+            </Card>
 
-      <Textarea id="comment" label="Comment" maxLength="140" />
+          </div>
 
-      <Modal id="xyz">
-        <h2 class="modal_title">Modal title here..</h2>
-        <T2>Some modal content</T2>
-      </Modal>
-      <Button variant="secondary" text="Open modal" @click="openModal('xyz')" />
-  
-    </Container>
+        </Layout>
+
+        <Textarea id="comment" label="Comment" maxLength="140" />
+
+        <Modal id="xyz">
+          <h2 class="modal_title">Modal title here..</h2>
+          <T2>Some modal content</T2>
+        </Modal>
+        <Button variant="secondary" text="Open modal" @click="openModal('xyz')" />
+    
+      </Container>
+
+    </Pane>
+
+    <Pane v-scrollobserver>
+
+    </Pane>
+
+    <Pane v-scrollobserver>
+
+    </Pane>
+
+    <Pane v-scrollobserver>
+
+    </Pane>
+
   </div>
 
 </template>
@@ -48,6 +66,7 @@
   //Arrangements --
   import Container from                 '@/components/01-arrangements/container/variant-1/component'
   import Layout from                    '@/components/01-arrangements/layout/variant-1/component'
+  import Pane from                      '@/components/01-arrangements/pane/variant-1/component'
   import H2 from                        '@/components/01-arrangements/h2/variant-1/component'
   import T2 from                        '@/components/01-arrangements/t2/variant-1/component'
   import Card from                      '@/components/01-arrangements/card/variant-1/component'
@@ -63,9 +82,9 @@
   //Pages --
 
   export default {
-    name: 'Home',
+    name: 'TestPage',
     components: {
-      Container, Layout, PrimaryNavigation, Card, H2, T2, Textarea, ButtonGroup, Button, Modal
+      Container, Layout, Pane, PrimaryNavigation, Card, H2, T2, Textarea, ButtonGroup, Button, Modal
     },
     props: {
       classList:{
@@ -80,7 +99,7 @@
     },
     computed: {
       classes() {
-        return `home ${this.classList}`;  
+        return `test-page ${this.classList}`;  
       },
       products() {
         return this.$store.state.data.products;
@@ -107,7 +126,12 @@
 
 <style lang="scss">
 
-  //local styles --
+  //Tokens --
+  @import "@/components/00-tokens/colours/variant-1/_style";
+  @import "@/components/00-tokens/fonts/variant-1/_style";
+  @import "@/components/00-tokens/dimensions/variant-1/_style";
+  @import "@/components/00-tokens/transitions/variant-1/_style";
+
   @import "./_style";
 
 </style>

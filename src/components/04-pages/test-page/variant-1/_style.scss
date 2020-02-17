@@ -1,0 +1,14 @@
+
+.test-page {
+	height: 100%;
+
+	.pane {
+		background-color: transparent;
+		transition: background-color .4s ease-in-out;
+
+		&.enter-view {
+			background-color: $pattern-grey-2;
+		}
+	}
+}
+

@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'ButtonGroup',
+    name: 'Pane',
     props: {
       classList:{
         type: String,
@@ -16,7 +16,7 @@
     },
     computed: {
       classes() {
-        return `button-group button-group--${this.variant} ${this.classList}`;  
+        return `pane ${this.classList}`;  
       },
     },
     methods: {

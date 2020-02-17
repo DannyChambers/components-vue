@@ -2,7 +2,7 @@
 <template>
 
   <div>
-    <Home />
+    <TestPage />
   </div>
 
 </template>
@@ -18,11 +18,11 @@
   //Modules --
 
   //Pages --
-  import Home from            '@/components/04-pages/home/variant-1/component.vue'
+  import TestPage from            '@/components/04-pages/test-page/variant-1/component.vue'
 
   export default {
     components: {
-      Home
+      TestPage
     },
     name: 'PrototypeAlpha1',
     props: {
