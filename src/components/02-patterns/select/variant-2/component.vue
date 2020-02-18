@@ -9,7 +9,7 @@
       <span></span>
     </div>
 
-    <div v-else>
+    <div class="option_wrapper" v-else>
       <label v-for="option in generateOptions" class="select_label select_label--button">
         <input type="radio"  name="{id}"/>
         <span>{{option}}</span>

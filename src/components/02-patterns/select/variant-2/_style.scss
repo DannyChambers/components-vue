@@ -3,23 +3,28 @@
 	position: relative;
 	max-width: $breakpoint-2; 
 
+	.option_wrapper {
+		border: 1px solid $line-colour-1;
+		overflow: hidden;
+	}
+
 	.select_label {
 		font-size: $_16px;
 		line-height: $dimension-full;
 		font-family: $font-family-regular;
 
 		&.select_label--button {
-			display: inline-block;
+			display: block;
 			height: $dimension-full;
 			font-size: $_16px;
 			line-height: $dimension-full;
 			font-family: $font-family-regular;
 			position: relative;
-			background: $pattern-grey-2;
-			border: 1px solid $line-colour-1;
+			background: $background-colour-1;
 			overflow: hidden;
 
 			&:nth-child(2) {
+				border: 1px solid $line-colour-2;
 				border-width: 1px 0;
 			}
 
@@ -100,6 +105,25 @@
 			font-size: $_30px;
 			color: $line-colour-1;
 			z-index: 1;
+		}
+	}
+}
+
+@media only screen and (min-width : $breakpoint-2){
+
+	.select { 
+	
+		.select_label {
+	
+			&.select_label--button {
+				box-sizing: border-box;
+				float: left;
+				width: 33.333333%;
+
+				&:nth-child(2) {
+					border-width: 0 1px;
+				}
+			}
 		}
 	}
 }

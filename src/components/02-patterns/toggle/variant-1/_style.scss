@@ -8,7 +8,7 @@
 	}
 
 	.toggle_switch {
-		background: $line-colour-2;
+		background: $background-colour-1;
 		width: calc(#{$dimension-double} - #{$dimension-quarter});
 		height: calc(#{$dimension-full} - 2px);
 		border: 1px solid $line-colour-1;
