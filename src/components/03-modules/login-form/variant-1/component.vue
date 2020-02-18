@@ -27,7 +27,6 @@
 
   //Patterns --
   import TextInput 	  from '@/components/02-patterns/text-input/variant-1/component.vue'
-  import Textarea 	  from '@/components/02-patterns/textarea/variant-1/component.vue'
   import Button 	    from '@/components/02-patterns/button/variant-1/component.vue'
 
   //Modules --
@@ -37,7 +36,7 @@
   export default {
     name: 'LoginForm',
     components: {
-      Legend, TextInput, Textarea, ButtonGroup, Button
+      Legend, TextInput, ButtonGroup, Button
     },
     props: {
       classList: {

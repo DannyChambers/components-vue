@@ -63,7 +63,7 @@
       classes() {
         return `text-input ${this.classList}`;  
       },
-      rules() {
+      genrateRules() {
         return this.rules.split('|');
       }
     },

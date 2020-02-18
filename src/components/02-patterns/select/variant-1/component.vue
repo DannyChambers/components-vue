@@ -3,7 +3,7 @@
     <label for="{id}" class="select_label">{{labelText}}</label>
     
     <select class="select_input">
-      <option v-for="option in generateOptions">{{option}}</option>
+      <option v-for="(option, index) in generateOptions" :key="index">{{option}}</option>
     </select>
     <span></span>
 

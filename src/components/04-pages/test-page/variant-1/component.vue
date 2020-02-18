@@ -91,7 +91,6 @@
   import T2                 from '@/components/01-arrangements/t2/variant-1/component'
   import T3                 from '@/components/01-arrangements/t3/variant-1/component'
   import Card               from '@/components/01-arrangements/card/variant-1/component'
-  import ButtonGroup        from '@/components/01-arrangements/button-group/variant-1/component'
 
   //Patterns --
   import Textarea           from '@/components/02-patterns/textarea/variant-1/component'
@@ -112,7 +111,7 @@
   export default {
     name: 'TestPage',
     components: {
-      Container, Layout, Pane, LoginForm, PrimaryNavigation, Card, H2, T2, TextInput, Textarea, Select1, Select2, Toggle, ButtonGroup, Button, Modal
+      Container, Layout, Pane, LoginForm, PrimaryNavigation, Card, H2, T2, TextInput, Textarea, Select1, Select2, Toggle, Button, Modal
     },
     props: {
       classList:{

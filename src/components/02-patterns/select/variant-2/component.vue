@@ -4,13 +4,13 @@
     
     <div v-if="generateOptions.length > 4">
       <select class="select_input" id="{id}">
-        <option v-for="option in generateOptions" :key="option">{{option}}</option>
+        <option v-for="(option, index) in generateOptions" :key="index">{{option}}</option>
       </select>
       <span></span>
     </div>
 
     <div class="option_wrapper" v-else>
-      <label v-for="option in generateOptions" :key="option" class="select_label select_label--button">
+      <label v-for="(option, index) in generateOptions" :key="index" class="select_label select_label--button">
         <input type="radio"  name="{id}"/>
         <span>{{option}}</span>
       </label>
