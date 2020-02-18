@@ -43,8 +43,9 @@
 				&:checked {
 
 					+ span {
-						background: $pattern-grey-1;
+						background: $pattern-grey-2;
 						color: $text-colour-2;
+						box-shadow: inset 0 0 $spacing-quarter $pattern-grey-1;
 					}
 				}
 			}

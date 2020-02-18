@@ -2,10 +2,10 @@
 import { storiesOf } from '@storybook/vue'
 //import { action } from '@storybook/addon-actions'
 
-import RadioButton from './variant-1/component.vue'
+import RadioButtons from './variant-1/component.vue'
 
-storiesOf('Components/Patterns/Radio button', module)
+storiesOf('Components/Patterns/Radio buttons', module)
   .add('Default', () => ({
-    components: { RadioButton },
-    template: '<RadioButton groupname="group_1" text="Radio button label" />'
+    components: { RadioButtons },
+    template: '<RadioButtons name="group_1" legend="Please specify one of the following options" options="options="Option one | Option two | Option three"" />'
   }));

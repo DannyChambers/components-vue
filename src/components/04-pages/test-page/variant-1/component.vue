@@ -12,10 +12,7 @@
 
         <br/><br/>
 
-        <ButtonGroup variant="left">
-          <Button variant="primary" text="Log in" @click="logIn()" />
-          <Button variant="secondary" text="Log out" @click="logOut()" />
-        </ButtonGroup>
+        <LoginForm />
     
       </Container>
     </Pane>
@@ -53,11 +50,11 @@
 
         <br/><br/>
 
-        <Select2 id="options" label="Options" options="Option one, Option two, Option three" />
+        <Select2 id="abc" labelText="Select an item" options="Option one | Option two | Option three" />
 
         <br/><br/>
 
-        <Select1 id="options" label="Options" options="Option one, Option two, Option three, Option four, Option five" />
+        <Select1 id="xyz" labelText="Select an item" options="Option one | Option two | Option three | Option four | Option five" />
 
         <br/><br/>
 
@@ -87,33 +84,35 @@
   //Tokens --
 
   //Arrangements --
-  import Container from                 '@/components/01-arrangements/container/variant-1/component'
-  import Layout from                    '@/components/01-arrangements/layout/variant-1/component'
-  import Pane from                      '@/components/01-arrangements/pane/variant-1/component'
-  import H2 from                        '@/components/01-arrangements/h2/variant-1/component'
-  import T2 from                        '@/components/01-arrangements/t2/variant-1/component'
-  import T3 from                        '@/components/01-arrangements/t3/variant-1/component'
-  import Card from                      '@/components/01-arrangements/card/variant-1/component'
-  import ButtonGroup from               '@/components/01-arrangements/button-group/variant-1/component'
+  import Container          from '@/components/01-arrangements/container/variant-1/component'
+  import Layout             from '@/components/01-arrangements/layout/variant-1/component'
+  import Pane               from '@/components/01-arrangements/pane/variant-1/component'
+  import H2                 from '@/components/01-arrangements/h2/variant-1/component'
+  import T2                 from '@/components/01-arrangements/t2/variant-1/component'
+  import T3                 from '@/components/01-arrangements/t3/variant-1/component'
+  import Card               from '@/components/01-arrangements/card/variant-1/component'
+  import ButtonGroup        from '@/components/01-arrangements/button-group/variant-1/component'
 
   //Patterns --
-  import Textarea from                  '@/components/02-patterns/textarea/variant-1/component'
-  import TextInput from                 '@/components/02-patterns/text-input/variant-1/component'
-  import Select1 from                   '@/components/02-patterns/select/variant-1/component'
-  import Select2 from                   '@/components/02-patterns/select/variant-2/component'
-  import Toggle from                    '@/components/02-patterns/toggle/variant-1/component'
+  import Textarea           from '@/components/02-patterns/textarea/variant-1/component'
+  import TextInput          from '@/components/02-patterns/text-input/variant-1/component'
+  import Select1            from '@/components/02-patterns/select/variant-1/component'
+  import Select2            from '@/components/02-patterns/select/variant-2/component'
+  import Toggle             from '@/components/02-patterns/toggle/variant-1/component'
 
-  import Button from                    '@/components/02-patterns/button/variant-1/component'
-  import Modal from                     '@/components/02-patterns/modal/variant-1/component'
+  import Button             from '@/components/02-patterns/button/variant-1/component'
+  import Modal              from '@/components/02-patterns/modal/variant-1/component'
 
   //Modules --
-  import PrimaryNavigation from         '@/components/03-modules/primary-navigation/variant-1/component'
+  import PrimaryNavigation  from '@/components/03-modules/primary-navigation/variant-1/component'
+  import LoginForm          from '@/components/03-modules/login-form/variant-1/component'
+  
   //Pages --
 
   export default {
     name: 'TestPage',
     components: {
-      Container, Layout, Pane, PrimaryNavigation, Card, H2, T2, TextInput, Textarea, Select1, Select2, Toggle, ButtonGroup, Button, Modal
+      Container, Layout, Pane, LoginForm, PrimaryNavigation, Card, H2, T2, TextInput, Textarea, Select1, Select2, Toggle, ButtonGroup, Button, Modal
     },
     props: {
       classList:{
@@ -135,12 +134,6 @@
       }
     },
     methods: {
-      logIn (){
-        this.$store.state.ui.loggedIn = true
-      },
-      logOut (){
-        this.$store.state.ui.loggedIn = false
-      },
       openModal (id){
         //console.log("Called openModal in Home");
         this.$store.state.ui.modal.visible = id

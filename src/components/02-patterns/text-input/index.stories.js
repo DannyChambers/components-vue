@@ -7,5 +7,5 @@ import TextInput from './variant-1/component.vue'
 storiesOf('Components/Patterns/Text input', module)
   .add('Default', () => ({
     components: { TextInput },
-    template: '<TextInput id="abc" label="A Text-input field" />'
+    template: '<TextInput id="abc" label="A Text-input field" rules="required" />'
   }));

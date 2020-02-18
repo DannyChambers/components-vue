@@ -1,33 +1,68 @@
 <template>
 
-  <label :class="classes">
-    <span class="label_text">{{text}}</span>
-    <input type="checkbox" />
-    <em></em>
-  </label>
+  <div>
+
+    <fieldset :class="classes" v-if="generateOptions.length > 1">
+      <legend class="legend">{{this.legend}}</legend>
+
+      <label v-for="(option, index) in generateOptions" :key="{index}" class="label">
+        <span class="label_text">{{option}}</span>
+        <input type="checkbox" :name="uniqueName(index)" />
+        <em></em>
+      </label>
+
+    </fieldset>
+
+    <div :class="classes"  v-else>
+
+      <label v-for="(option, index) in generateOptions" :key="{index}" class="label">
+        <span class="label_text">{{option}}</span>
+        <input type="checkbox" :name="uniqueName(index)" />
+        <em></em>
+      </label>
+
+    </div>
+  
+  </div>
 
 </template>
 
 <script>
   export default {
-    name: 'Checkbox',
+    name: 'Checkboxes',
     props: {
-      classList:{
+      classList: {
         type: String,
         default: "",
       },
-      text: {
+      name: { 
+        type: String,
+        required: true
+      },
+      legend: {
+        type: String,
+        required: true
+      },
+      label: {
+        type: String,
+        required: true
+      },
+      options: {
         type: String,
         required: true
       }
     },
     computed: {
       classes() {
-        return `label checkbox ${this.classList}`;  
+        return `check-boxes ${this.classList}`;  
       },
+      generateOptions() {
+        return this.options.split('|');
+      }
     },
     methods: {
-      onClick() {
+      uniqueName(index) {
+        return this.name + '-' + index;
       }
     }
   }

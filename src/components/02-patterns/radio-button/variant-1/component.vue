@@ -1,10 +1,15 @@
 <template>
 
-  <label :class="classes">
-    <span class="label_text">{{text}}</span>
-    <input type="radio" :name="groupname" />
-    <em></em>
-  </label>
+  <fieldset :class="classes">
+    <legend class="legend">{{this.legend}}</legend>
+
+    <label v-for="(option, index) in generateOptions" :key="{index}" class="label">
+      <span class="label_text">{{option}}</span>
+      <input type="radio" :name="{name}" />
+      <em></em>
+    </label>
+
+  </fieldset>
 
 </template>
 
@@ -16,23 +21,32 @@
         type: String,
         default: "",
       },
-      groupname: {
+      name: {
         type: String,
         required: true
       },
-      text: {
+      legend: {
+        type: String,
+        required: true
+      },
+      label: {
+        type: String,
+        required: true
+      },
+      options: {
         type: String,
         required: true
       }
     },
     computed: {
       classes() {
-        return `label radio-button ${this.classList}`;  
+        return `radio-buttons ${this.classList}`;  
       },
+      generateOptions() {
+        return this.options.split('|');
+      }
     },
     methods: {
-      onClick() {
-      }
     }
   }
 </script>

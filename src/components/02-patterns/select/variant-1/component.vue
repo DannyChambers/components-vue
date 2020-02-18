@@ -40,7 +40,7 @@
         return `select ${this.classList}`;  
       },
       generateOptions() {
-        return this.options.split(',');
+        return this.options.split('|');
       },
     },
     methods: {

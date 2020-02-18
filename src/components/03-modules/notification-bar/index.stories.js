@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/vue'
 
 import NotificationBar from './variant-1/component.vue'
 
-storiesOf('Components/Patterns/Notification bar', module)
+storiesOf('Components/Modules/Notification bar', module)
   .add('Information', () => ({
     components: { NotificationBar },
     template: '<NotificationBar variant="information" text="This is a standard dismissable notification bar no time limit and no link" dismissable="true" removeafterseconds="" link="" />'
@@ -18,5 +18,5 @@ storiesOf('Components/Patterns/Notification bar', module)
   }))
   .add('Error', () => ({
     components: { NotificationBar },
-    template: '<NotificationBar variant="error" text="This is a standard non-dismissable notification bar no time limit and no link" dismissable="false" removeafterseconds="" link="http://www.alink.com/" />'
+    template: '<NotificationBar variant="error" text="This is an urgent style non-dismissable notification bar no time limit and no link" dismissable="false" removeafterseconds="" link="http://www.alink.com/" />'
   }));

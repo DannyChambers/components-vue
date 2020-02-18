@@ -48,11 +48,14 @@
       placeholder: {
         type: String
       },
+      rules: {
+        type: String
+      }
     },
     data: function () {
       return {
         fieldError: {
-          message: "This field is required"
+          message: null
         }
       }
     },
@@ -60,11 +63,12 @@
       classes() {
         return `text-input ${this.classList}`;  
       },
+      rules() {
+        return this.rules.split('|');
+      }
     },
     methods: {
-      validate(){
-
-
+      validate(rules){
       }
     }
   }
