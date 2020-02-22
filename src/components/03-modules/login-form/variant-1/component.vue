@@ -3,9 +3,9 @@
     <fieldset class="login-form_fieldset">
       <Legend text="Log in" />
 
-      <TextInput label="Username" />
+      <TextInput label="Username" id="username" />
 
-      <TextInput label="Password" />
+      <PasswordInput id="password" label="Password" />
 
     </fieldset>
 
@@ -22,12 +22,13 @@
   //Tokens --
 
   //Arrangements --
-  import Legend       from '@/components/01-arrangements/legend/variant-1/component.vue'
-  import ButtonGroup  from '@/components/01-arrangements/button-group/variant-1/component.vue'
+  import Legend           from '@/components/01-arrangements/legend/variant-1/component.vue'
+  import ButtonGroup      from '@/components/01-arrangements/button-group/variant-1/component.vue'
 
   //Patterns --
-  import TextInput 	  from '@/components/02-patterns/text-input/variant-1/component.vue'
-  import Button 	    from '@/components/02-patterns/button/variant-1/component.vue'
+  import TextInput 	      from '@/components/02-patterns/text-input/variant-1/component.vue'
+  import PasswordInput 	  from '@/components/02-patterns/password-input/variant-1/component.vue'
+  import Button 	        from '@/components/02-patterns/button/variant-1/component.vue'
 
   //Modules --
 
@@ -36,7 +37,7 @@
   export default {
     name: 'LoginForm',
     components: {
-      Legend, TextInput, ButtonGroup, Button
+      Legend, TextInput, PasswordInput, ButtonGroup, Button
     },
     props: {
       classList: {
@@ -64,6 +65,9 @@
     methods: {
       logIn (){
         this.$store.state.ui.loggedIn = true
+      },
+      validate (){
+        console.log("Called validate");
       }
     }
   }

@@ -13,6 +13,9 @@ export default new Vuex.Store({
   state: {
     ui: {
       loggedIn: false,
+      primaryNavigation: {
+        visible: false
+      },
       modal: {
         visible: null
       } 

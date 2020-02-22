@@ -3,12 +3,7 @@
 
 	&:before, &:after {
 		content: " ";
-		margin: 0 $spacing-quarter 0 0;
 		font-family: $font-family-icon;
-	}
-
-	&:after {
-		margin: 0 0 0 $spacing-quarter;
 	}
 
 	&.icon--github {

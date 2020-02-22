@@ -80,7 +80,7 @@
 			width: 0;
 			overflow: hidden;
 		}
-
+		
 		&.is-disabled {
 			background-color: none;
 			border: none;

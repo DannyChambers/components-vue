@@ -1,8 +1,13 @@
 <template>
-  <div :class="classes">
+  <div :class="this.$store.state.ui.primaryNavigation.visible == true ? 'primary-navigation primary-navigation--visible' : 'primary-navigation'" >
+
+    <Button variant="icononly" classList="primary-navigation_trigger" @click="toggleMenu()">
+      <span class="button_text">Menu</span>
+      <Icon iconPlacement="after" iconGraphic="close" />
+    </Button>
 
     <ul class="primary-navigation_list">
-      <li  v-for="navItem in navItems" :key="navItem"><router-link to="/">{{navItem}}</router-link></li>
+      <li  v-for="navItem in navItems" :key="navItem" class="primary-navigation_list-item"><router-link to="/" class="primary-navigation_link"><span class="link_text">{{navItem}}</span></router-link></li>
     </ul>
 
   </div>
@@ -11,17 +16,22 @@
 <script>
 
   //Tokens --
+  import Icon               from '@/components/00-tokens/icon/variant-1/component'
 
   //Arrangements --
 
   //Patterns --
+  import Button             from '@/components/02-patterns/button/variant-1/component'
 
   //Modules --
-
+  
   //Pages --
 
   export default {
     name: 'PrimaryNavigation',
+    components: {
+      Button, Icon
+    },
     props: {
       classList:{
         type: String,
@@ -51,11 +61,19 @@
       }
     },
     methods: {
+      toggleMenu (){
+        //console.log("Called toggleMenu");
+        if(this.$store.state.ui.primaryNavigation.visible == true){
+          this.$store.state.ui.primaryNavigation.visible = false
+        } else {
+          this.$store.state.ui.primaryNavigation.visible = true
+        }
+      }
     }
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
   //Tokens --
   @import "@/components/00-tokens/colours/variant-1/_style";

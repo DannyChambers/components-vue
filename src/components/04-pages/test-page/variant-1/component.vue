@@ -3,14 +3,21 @@
 
   <div :class="classes">
 
+    <PageHeader>
+
+      <H2>Test page</H2>
+
+      <Button variant="icononly" classList="primary-navigation_trigger" @click="toggleMenu()">
+        <span class="button_text">Menu</span>
+        <Icon iconPlacement="after" iconGraphic="menu" />
+      </Button>
+
+    </PageHeader>
+
+    <PrimaryNavigation />
+
     <Pane v-scrollobserver>
       <Container>
-
-        <H2>Home</H2>
-
-        <PrimaryNavigation />
-
-        <br/><br/>
 
         <LoginForm />
     
@@ -46,6 +53,10 @@
 
         <br/><br/>
 
+        <PasswordInput id="password" label="Password" />
+
+        <br/><br/>
+
         <Textarea id="comment" label="Comment" maxLength="140" />
 
         <br/><br/>
@@ -58,7 +69,7 @@
 
         <br/><br/>
 
-        <Toggle />
+        <Toggle labelText="Switch on or off" id="toggle" />
 
       </Container>
     </Pane>
@@ -82,6 +93,7 @@
 <script>
   
   //Tokens --
+  import Icon               from '@/components/00-tokens/icon/variant-1/component'
 
   //Arrangements --
   import Container          from '@/components/01-arrangements/container/variant-1/component'
@@ -95,6 +107,7 @@
   //Patterns --
   import Textarea           from '@/components/02-patterns/textarea/variant-1/component'
   import TextInput          from '@/components/02-patterns/text-input/variant-1/component'
+  import PasswordInput      from '@/components/02-patterns/password-input/variant-1/component'
   import Select1            from '@/components/02-patterns/select/variant-1/component'
   import Select2            from '@/components/02-patterns/select/variant-2/component'
   import Toggle             from '@/components/02-patterns/toggle/variant-1/component'
@@ -103,6 +116,7 @@
   import Modal              from '@/components/02-patterns/modal/variant-1/component'
 
   //Modules --
+  import PageHeader         from '@/components/03-modules/page-header/variant-1/component'
   import PrimaryNavigation  from '@/components/03-modules/primary-navigation/variant-1/component'
   import LoginForm          from '@/components/03-modules/login-form/variant-1/component'
   
@@ -111,7 +125,7 @@
   export default {
     name: 'TestPage',
     components: {
-      Container, Layout, Pane, LoginForm, PrimaryNavigation, Card, H2, T2, TextInput, Textarea, Select1, Select2, Toggle, Button, Modal
+      Container, Layout, PageHeader, PrimaryNavigation, Pane, LoginForm, Card, H2, T2, TextInput, PasswordInput, Textarea, Select1, Select2, Toggle, Button, Icon, Modal
     },
     props: {
       classList:{
@@ -133,8 +147,15 @@
       }
     },
     methods: {
+      toggleMenu (){
+        //console.log("Called toggleMenu");
+        if(this.$store.state.ui.primaryNavigation.visible == true){
+          this.$store.state.ui.primaryNavigation.visible = false
+        } else {
+          this.$store.state.ui.primaryNavigation.visible = true
+        }
+      },
       openModal (id){
-        //console.log("Called openModal in Home");
         this.$store.state.ui.modal.visible = id
       }
     },

@@ -7,7 +7,7 @@
       <H2>Prototype inventory</H2>
 
       <Ul classlist="router_links">
-        <li class="ul_item"><router-link to="/prototype-alpha-1" class="link link--standalone">Alpha 1</router-link></li>
+        <li class="list_item"><router-link to="/prototype-alpha-1">Alpha 1</router-link></li>
       </Ul>
       
     </Container>

@@ -1,8 +1,8 @@
 <template>
   <div :class="classes">
     <label :for="id" class="text-input_label">{{ label }}</label>
-    <input type="text" :id="id" :value="value" :placeholder="placeholder" />
-    <T3 v-if="this.fieldError" class="text-input_message text-input_message--error">{{this.fieldError}}</T3>
+    <input type="password" :id="id" :value="value" />
+    <T3 v-if="fieldError" class="text-input_message text-input_message--error">{{fieldError.message}}</T3>
   </div>
 </template>
 
@@ -21,7 +21,7 @@
   
 
   export default {
-    name: 'TextInput',
+    name: 'PasswordInput',
     components: {
       T3
     },
@@ -45,15 +45,15 @@
       value: {
         type: String
       },
-      placeholder: {
-        type: String
-      },
-      fldError: {
+      rules: {
         type: String
       }
     },
     data: function () {
       return {
+        fieldError: {
+          message: null
+        }
       }
     },
     computed: {
