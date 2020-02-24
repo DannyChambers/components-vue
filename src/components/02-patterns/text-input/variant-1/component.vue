@@ -2,7 +2,7 @@
   <div :class="classes">
     <label :for="id" class="text-input_label">{{ label }}</label>
     <input type="text" :id="id" :value="value" :placeholder="placeholder" />
-    <T3 v-if="this.fieldError" class="text-input_message text-input_message--error">{{this.fieldError}}</T3>
+    <T3 v-if="this.fieldError" class="message--error">{{this.fieldError}}</T3>
   </div>
 </template>
 

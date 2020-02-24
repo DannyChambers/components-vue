@@ -13,6 +13,22 @@
 	line-height: 1.15;
 	font-size: $_16px;
 	font-family: $font-family-regular;
+
+	&.message--success {
+		color: $message-colour-success;
+	}
+
+	&.message--information {
+		color: $message-colour-information;
+	}
+
+	&.message--warning {
+		color: $message-colour-warning;
+	}
+
+	&.message--error {
+		color: $message-colour-error;
+	}
 }
 
 @media only screen and (min-width : $breakpoint-4){

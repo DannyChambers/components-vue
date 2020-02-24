@@ -35,26 +35,8 @@
 		}
 	}
 
-	.textarea_message {
-		margin-top: $spacing-half;
-		font-family: $font-family-regular;
-		text-align: right;
-
-		&.textarea_message--success {
-			color: $message-error;
-		}
-
-		&.textarea_message--information {
-			color: $text-colour-1;
-		}
-
-		&.textarea_message--warning {
-			color: $message-warning;
-		}
-
-		&.textarea_message--error {
-			color: $message-success;
-		}
+	.t3 {
+		margin: $spacing-half 0 0 0;
 	}
 }
 

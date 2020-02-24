@@ -1,5 +1,5 @@
 .text-input {
-		margin-bottom: $spacing-full;
+	margin-bottom: $spacing-half;
 	
 	.text-input_label {
 		font-size: $_16px;
@@ -11,7 +11,8 @@
 		box-sizing: border-box;
 		display: block;
 		width: 100%;
-		max-width: $breakpoint-2; 
+		max-width: $breakpoint-2;
+		margin-bottom: $spacing-half;
 		padding: $spacing-quarter;
 		border: 1px solid $line-colour-1;
 		line-height: $dimension-full;
@@ -31,26 +32,9 @@
 			border-color: $active-colour;
 		}
 	}
-
-	.text-input_message {
-		margin-top: $spacing-half;
-		font-family: $font-family-regular;
-
-		&.text-input_message--success {
-			color: $message-success;
-		}
-
-		&.text-input_message--information {
-			color: $message-information;
-		}
-
-		&.text-input_message--warning {
-			color: $message-warning;
-		}
-
-		&.text-input_message--error {
-			color: $message-error;
-		}
+	
+	.t3 {
+		margin: 0;
+		padding-bottom: $spacing-half;
 	}
 }
-

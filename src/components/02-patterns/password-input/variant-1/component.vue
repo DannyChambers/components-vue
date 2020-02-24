@@ -2,7 +2,7 @@
   <div :class="classes">
     <label :for="id" class="text-input_label">{{ label }}</label>
     <input type="password" :id="id" :value="value" />
-    <T3 v-if="fieldError" class="text-input_message text-input_message--error">{{fieldError.message}}</T3>
+    <T3 v-if="fieldError" class="message--error">{{this.fieldError}}</T3>
   </div>
 </template>
 
@@ -45,15 +45,12 @@
       value: {
         type: String
       },
-      rules: {
-        type: String
+      fieldError: {
+        type: [String, null]
       }
     },
     data: function () {
       return {
-        fieldError: {
-          message: null
-        }
       }
     },
     computed: {

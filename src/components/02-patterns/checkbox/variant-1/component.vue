@@ -4,22 +4,24 @@
 
     <fieldset :class="classes" v-if="generateOptions.length > 1">
       <legend class="legend">{{this.legend}}</legend>
+      <T3 v-if="this.fieldError" class="message--error">{{this.fieldError}}</T3>
 
       <label v-for="(option, index) in generateOptions" :key="{index}" class="label">
         <span class="label_text">{{option}}</span>
         <input type="checkbox" :name="uniqueName(index)" />
         <em></em>
       </label>
-
     </fieldset>
 
-    <div :class="classes"  v-else>
+    <div :class="classes + ' checkbox--single'"  v-else>
 
       <label v-for="(option, index) in generateOptions" :key="{index}" class="label">
         <span class="label_text">{{option}}</span>
         <input type="checkbox" :name="uniqueName(index)" />
         <em></em>
       </label>
+
+      <T3 v-if="this.fieldError" class="message--error">{{this.fieldError}}</T3>
 
     </div>
   
@@ -28,8 +30,23 @@
 </template>
 
 <script>
+
+  //Tokens --
+
+  //Arrangements --
+  import T3 from            '@/components/01-arrangements/t3/variant-1/component'
+
+  //Patterns --
+
+  //Modules --
+
+  //Pages --
+
   export default {
     name: 'Checkboxes',
+    components: {
+      T3
+    },
     props: {
       classList: {
         type: String,
@@ -50,6 +67,9 @@
       options: {
         type: String,
         required: true
+      },
+      fieldError: {
+        type: [String, null]
       }
     },
     computed: {

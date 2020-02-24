@@ -7,5 +7,5 @@ import Textarea from './variant-1/component.vue'
 storiesOf('Components/Patterns/Textarea', module)
   .add('Default', () => ({
     components: { Textarea },
-    template: '<Textarea id="comment" label="Comment" maxLength="140" />'
+    template: '<Textarea id="comment" label="Comment" maxLength="140" fieldError="This field is required" />'
   }));

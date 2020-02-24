@@ -4,7 +4,8 @@
   <div :class="classes">
     <label :for="id" class="textarea_label">{{ label }}</label>
     <textarea v-model="text" :id="id" :name="id" @keyup="autosize" :maxlength="maxLength" class="textarea_input"></textarea>
-    <T3 class="textarea_message textarea_message--information">{{ charactersRemaining }} of {{ this.maxCharacters }} characters remaining.</T3>
+    <T3 class="message--information">{{ charactersRemaining }} of {{ this.maxCharacters }} characters remaining.</T3>
+    <T3 v-if="this.fieldError" class="message--error">{{this.fieldError}}</T3>
   </div>
 
 </template>
@@ -24,6 +25,7 @@
 
 
   export default {
+    name: 'Textarea',
     components: {
       T3
     },
@@ -51,6 +53,9 @@
         type: String,
         required: true
       },
+      fieldError: {
+        type: [String, null]
+      }
     },
     data: function() {
       return {

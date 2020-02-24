@@ -75,10 +75,15 @@ $secondary-button-background-disabled: transparent;
 $secondary-button-border-disabled: $brand-5;
 $secondary-button-colour-disabled: $brand-5;
 
-$message-success: $brand-7;
-$message-warning: $brand-9;
-$message-information: $brand-8;
-$message-error: $brand-10;
+$message-colour-success: $brand-7;
+$message-colour-warning: $brand-9;
+$message-colour-information: $text-colour-1;
+$message-colour-error: $brand-10;
+
+$message-background-success: $brand-7;
+$message-background-warning: $brand-9;
+$message-background-information: $brand-8;
+$message-background-error: $brand-10;
 
 .token-list {
     list-style: none;

@@ -4,6 +4,8 @@
 	border: none;
 
 	.legend {
+		display: block;
+		margin-bottom: -$spacing-half;
 		font-family: $font-family-regular;
 		font-size: $_16px;
 		line-height: calc(#{$dimension-half} + 1px);
@@ -12,9 +14,13 @@
 	.label {
 		display: block;
 		position: relative;
-		margin-bottom: $spacing-half;
+		margin: $spacing-half 0;
 		padding-left: calc(#{$dimension-half} + #{$dimension-quarter});
 		line-height: $_30px;
+
+		&:first-of-type {
+			margin-top: $spacing-full;
+		}
 
 		.label_text, .option_text {
 			font-family: $font-family-regular;
@@ -74,6 +80,17 @@
 				//border-radius: $dimension-half;
 				transition: border-color .3s ease-in-out;
 			}
+		}
+	}
+
+	.t3 {
+		margin: 0;
+	}
+
+	&.checkbox--single {
+
+		.t3 {
+			margin: 0 0 0 calc(#{$spacing-full} + #{$spacing-half});
 		}
 	}
 }

@@ -5,12 +5,29 @@
       <input type="checkbox" id="{id}" class="toggle_input" />
       <em></em>
     </div>
+    <T3 v-if="this.fieldError" class="message--error">{{this.fieldError}}</T3>
   </div>
 </template>
 
 <script>
+
+  //Tokens --
+
+  //Arrangements --
+  import T3 from            '@/components/01-arrangements/t3/variant-1/component'
+
+  //Patterns --
+
+  //Modules --
+
+  //Pages --
+
+
   export default {
     name: 'Toggle',
+    components: {
+      T3
+    },
     props: {
       classList:{
         type: String,
@@ -23,6 +40,9 @@
       labelText: {
         type: String,
         required: true
+      },
+      fieldError: {
+        type: [String, null]
       }
     },
     computed: {

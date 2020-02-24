@@ -6,9 +6,9 @@ import SelectInput2 from './variant-2/component.vue'
 storiesOf('Components/Patterns/Select', module)
   .add('Default', () => ({
     components: { SelectInput },
-    template: '<SelectInput id="xyz" labelText="Select an item" options="Option one | Option two | Option three | Option four | Option five" />'
+    template: '<SelectInput id="abc" labelText="Select an item" options="Option one | Option two | Option three | Option four | Option five" fieldError="This field is required" />'
   }))
   .add('Three or less options', () => ({
     components: { SelectInput2 },
-    template: '<SelectInput2 id="xyz" labelText="Select an item" options="Option one | Option two | Option three" />'
+    template: '<SelectInput2 id="xyz" labelText="Select an item" options="Option one | Option two | Option three" fieldError="This field is required" />'
   }));

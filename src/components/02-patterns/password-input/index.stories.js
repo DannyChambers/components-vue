@@ -7,5 +7,5 @@ import PasswordInput from './variant-1/component.vue'
 storiesOf('Components/Patterns/Password input', module)
   .add('Default', () => ({
     components: { PasswordInput },
-    template: '<PasswordInput id="abc" label="A Passord input field" rules="required" />'
+    template: '<PasswordInput id="abc" label="A Passord input field" rules="required" fieldError="This field is required" />'
   }));

@@ -18,7 +18,7 @@
 	}
 
 	&--success {
-		background: $message-success;
+		background: $message-background-success;
 		color: $text-colour-2;
 
 		.button--icononly {
@@ -30,7 +30,7 @@
 	}
 
 	&--information {
-		background: $message-information;
+		background: $message-background-information;
 		color: $text-colour-1;
 
 		.button--icononly {
@@ -42,7 +42,7 @@
 	}
 
 	&--warning {
-		background: $message-warning;
+		background: $message-background-warning;
 		color: $text-colour-2;
 
 		.button--icononly {
@@ -54,7 +54,7 @@
 	}
 
 	&--error {
-		background: $message-error;
+		background: $message-background-error;
 		color: $text-colour-2;
 
 		.button--icononly {

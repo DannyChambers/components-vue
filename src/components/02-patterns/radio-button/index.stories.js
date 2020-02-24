@@ -7,5 +7,5 @@ import RadioButtons from './variant-1/component.vue'
 storiesOf('Components/Patterns/Radio buttons', module)
   .add('Default', () => ({
     components: { RadioButtons },
-    template: '<RadioButtons name="group_1" legend="Please specify one of the following options" options="options="Option one | Option two | Option three"" />'
+    template: '<RadioButtons name="group_1" legend="Please specify one of the following options" options="options="Option one | Option two | Option three" fieldError="This field is required" />'
   }));

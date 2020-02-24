@@ -29,7 +29,7 @@
 			display: block;
 			width: $dimension-double;
 			height: $dimension-full;
-			background: $message-success;
+			background: $message-background-success;
 			position: absolute;
 			top: -1px;
 			left: 0;
@@ -63,5 +63,9 @@
 				opacity: 1;
 			}
 		}
+	}
+
+	.t3 {
+		margin: 0;
 	}
 }
