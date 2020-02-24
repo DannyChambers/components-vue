@@ -48,8 +48,8 @@
       placeholder: {
         type: String
       },
-      fldError: {
-        type: String
+      fieldError: {
+        type: [String, null]
       }
     },
     data: function () {

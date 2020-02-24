@@ -5,7 +5,7 @@
       <option v-for="(option, index) in generateOptions" :key="index">{{option}}</option>
     </select>
     <span></span>
-    <T3 v-if="this.fieldError" class="text-input_message text-input_message--error">{{this.fieldError}}</T3>
+    <T3 v-if="fieldError" class="text-input_message text-input_message--error">{{this.fieldError}}</T3>
   </div>
 </template>
 
@@ -29,8 +29,8 @@
         type: String,
         required: true
       },
-      fldError: {
-        type: String
+      fieldError: {
+        type: [String, null]
       }
     },
     data: function() {

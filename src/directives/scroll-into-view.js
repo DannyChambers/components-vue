@@ -1,5 +1,4 @@
 
-//TODO: Extend this to allow for a persitant class (Remove 'esle' statement if args set)
 
 const scrollObserver = new IntersectionObserver(
 

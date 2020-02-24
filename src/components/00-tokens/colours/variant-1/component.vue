@@ -4,7 +4,7 @@
     <H2>Raw palette</H2>
 
     <Ul classList="token-list">
-      <li class="list_item" v-for="colour in rawPalette" :key="colour.hexadecimal">
+      <li class="list_item" v-for="(colour, index) in rawPalette" :key="index">
         <div :style="{'background': colour.hexadecimal}">
           <div><strong>Variable: </strong>{{colour.variable}}</div>
           <div><strong>Hex code: </strong>{{colour.hexadecimal}}</div>
@@ -15,7 +15,7 @@
     <H2>Functional palette</H2>
 
     <Ul classList="token-list">
-      <li class="list_item" v-for="colour2 in functionalPalette" :key="colour2.hexadecimal">
+      <li class="list_item" v-for="(colour2, index) in functionalPalette" :key="index">
         <div :style="{'background': colour2.hexadecimal}">
           <div><strong>Variable: </strong>{{colour2.variable}}</div>
           <div><strong>Maps to: </strong>{{colour2.relation}}</div>

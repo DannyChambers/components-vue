@@ -7,12 +7,14 @@
         <option v-for="(option, index) in generateOptions" :key="index">{{option}}</option>
       </select>
       <span></span>
+      <T3 v-if="this.fieldError" class="text-input_message text-input_message--error">{{this.fieldError}}</T3>
     </div>
 
     <div class="option_wrapper" v-else>
       <label v-for="(option, index) in generateOptions" :key="index" class="select_label select_label--button">
         <input type="radio"  name="{id}"/>
         <span>{{option}}</span>
+        <T3 v-if="fieldError" class="text-input_message text-input_message--error">{{this.fieldError}}</T3>
       </label>
     </div>
 
@@ -38,6 +40,9 @@
       options: {
         type: String,
         required: true
+      },
+      fieldError: {
+        type: [String, null]
       }
     },
     data: function() {

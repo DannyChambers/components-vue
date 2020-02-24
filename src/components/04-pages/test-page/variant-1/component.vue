@@ -29,7 +29,7 @@
 
         <Layout variant="25_25_25_25">
 
-          <div class="column" v-for="product in products" :key="product.id">
+          <div class="column" v-for="product in getProducts" :key="product.id">
 
             <Card>
               <h2 class="card_title">{{product.title}}</h2>
@@ -53,7 +53,7 @@
 
         <br/><br/>
 
-        <PasswordInput id="password" label="Password" />
+        <PasswordInput id="passwordxyz" label="Password" />
 
         <br/><br/>
 
@@ -91,7 +91,7 @@
 </template>
 
 <script>
-  
+    
   //Tokens --
   import Icon               from '@/components/00-tokens/icon/variant-1/component'
 
@@ -119,13 +119,14 @@
   import PageHeader         from '@/components/03-modules/page-header/variant-1/component'
   import PrimaryNavigation  from '@/components/03-modules/primary-navigation/variant-1/component'
   import LoginForm          from '@/components/03-modules/login-form/variant-1/component'
+  import Listen             from '@/components/03-modules/listen/variant-1/component'
   
   //Pages --
 
   export default {
     name: 'TestPage',
     components: {
-      Container, Layout, PageHeader, PrimaryNavigation, Pane, LoginForm, Card, H2, T2, TextInput, PasswordInput, Textarea, Select1, Select2, Toggle, Button, Icon, Modal
+      Listen, Container, Layout, PageHeader, PrimaryNavigation, Pane, LoginForm, Card, H2, T2, TextInput, PasswordInput, Textarea, Select1, Select2, Toggle, Button, Icon, Modal
     },
     props: {
       classList:{
@@ -142,13 +143,12 @@
       classes() {
         return `test-page ${this.classList}`;  
       },
-      products() {
+      getProducts() {
         return this.$store.state.data.products;
       }
     },
     methods: {
       toggleMenu (){
-        //console.log("Called toggleMenu");
         if(this.$store.state.ui.primaryNavigation.visible == true){
           this.$store.state.ui.primaryNavigation.visible = false
         } else {
@@ -157,7 +157,7 @@
       },
       openModal (id){
         this.$store.state.ui.modal.visible = id
-      }
+      },
     },
     created() {
       this.$store.dispatch('loadData', 'products');
