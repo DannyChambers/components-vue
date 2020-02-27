@@ -1,24 +1,23 @@
 <template>
-  <div :class="classes">
-    <div class="pane_inner">
-      <slot></slot>
-    </div>
-  </div>
+  <a :href="this.linkTarget" :class="classes"><span class="logo_text">Company name</span></a>
 </template>
 
 <script>
   export default {
-    name: 'Pane',
+    name: 'Logo',
     props: {
       classList:{
         type: String,
         default: "",
       },
-      variant: String
+      linkTarget: {
+        type: String,
+        default: "/",
+      }
     },
     computed: {
       classes() {
-        return `pane ${this.classList}`;  
+        return `logo ${this.classList}`;
       },
     },
     methods: {

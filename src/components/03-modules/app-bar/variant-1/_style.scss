@@ -7,6 +7,31 @@
 	left: 0;
 	height: $dimension-double;
 
+	.app-bar_list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-align: center;
+		
+		.app-bar_list_item {
+			display: inline-block;
+			width: $dimension-double;
+			height: $dimension-double;
+			line-height: $dimension-double;
+			margin: 0 $spacing-quarter;
+			background: pink;
+			border: 1px solid $line-colour-2;
 
+			.app-bar_list_item_text {
+				display: block;
+				position: absolute;
+				left: -9999px;
+				top: -9999px;
+				height: 0;
+				overflow: hidden;
+			}
+		}
+
+	}
 
 }

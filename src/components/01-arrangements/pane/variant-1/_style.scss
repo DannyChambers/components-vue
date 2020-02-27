@@ -1,13 +1,19 @@
 
 .pane {
-	display: table;
-	width: 100%;
-	min-height: 100vh;
-	background: $pattern-grey-2;
 
-	.pane_vertical {
-		display: table-cell;
-		vertical-align: middle;
+	.pane_inner {
+
+	}
+
+	&.pane--vertical-centre {
+		display: table;
+		width: 100%;
+		min-height: 100vh;
+
+		.pane_inner {
+			display: table-cell;
+			vertical-align: middle;
+		}
 	}
 }
 

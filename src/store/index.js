@@ -12,7 +12,9 @@ Vue.axios.defaults.baseURL = "http://localhost:3000/";
 export default new Vuex.Store({
   state: {
     ui: {
-      loggedIn: false,
+      user:{
+        loggedIn: false
+      },
       primaryNavigation: {
         visible: false
       },
@@ -34,22 +36,28 @@ export default new Vuex.Store({
       }).catch(error => {
         throw new Error(`API ${error}`);
       });
+    },
+    logInUser({commit}, id) {
+      console.log("Called logInUser with ID: ", id);
+      commit('ADD_LOGGED_USER', id);
     }
   },
   mutations: {
     SAVE_DATA(state, payload) {
-
-      //Need to assign data based on endpoint here --
-
       if(payload.endpoint === "users"){
-
         state.data.users = payload.result;
-
       } else if(payload.endpoint === "products"){
-
         state.data.products = payload.result;
-
       }
+    },
+    ADD_LOGGED_USER(state, payload){
+      console.log("Called ADD_LOGGED_USER");
+      state.ui.user.loggedIn = payload;
+    }
+  },
+  getters: {
+    loggedInUser: (state) => {
+      return state.data.users.find(user => user.id === state.ui.user.loggedIn);
     }
   }
 })

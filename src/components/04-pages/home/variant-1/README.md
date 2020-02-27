@@ -1,4 +1,4 @@
-# Splash page
+# Home page
 
 ## Description
 

@@ -3,86 +3,19 @@
 
   <div :class="classes">
 
-    <PageHeader>
-
-      <H2>Test page</H2>
-
-      <Button variant="icononly" classList="primary-navigation_trigger" @click="toggleMenu()">
-        <span class="button_text">Menu</span>
-        <Icon iconPlacement="after" iconGraphic="menu" />
-      </Button>
-
-    </PageHeader>
-
-    <PrimaryNavigation />
-
     <Pane v-scrollobserver>
       <Container>
 
-        <LoginForm />
+        <PageHeader>
+          <Logo linkTarget="/alpha-1" />
+        </PageHeader>
+
+        <PrimaryNavigation />
+
+        <H2>Hello {{ this.user.firstname }}</H2>
+
+        <AppBar />
     
-      </Container>
-    </Pane>
-
-    <Pane v-scrollobserver>
-      <Container>
-
-        <Layout variant="25_25_25_25">
-
-          <div class="column" v-for="product in getProducts" :key="product.id">
-
-            <Card>
-              <h2 class="card_title">{{product.title}}</h2>
-              <div class="card_content">
-                <T2>{{product.description}}</T2>
-                <T2>{{product.category}}</T2>
-              </div>
-            </Card>
-
-          </div>
-
-        </Layout>
-
-      </Container>
-    </Pane>
-
-    <Pane v-scrollobserver>
-      <Container>
-
-        <TextInput id="name" label="Name" />
-
-        <br/><br/>
-
-        <PasswordInput id="passwordxyz" label="Password" />
-
-        <br/><br/>
-
-        <Textarea id="comment" label="Comment" maxLength="140" />
-
-        <br/><br/>
-
-        <Select2 id="abc" labelText="Select an item" options="Option one | Option two | Option three" />
-
-        <br/><br/>
-
-        <Select1 id="xyz" labelText="Select an item" options="Option one | Option two | Option three | Option four | Option five" />
-
-        <br/><br/>
-
-        <Toggle labelText="Switch on or off" id="toggle" />
-
-      </Container>
-    </Pane>
-
-    <Pane v-scrollobserver>
-      <Container>
-
-        <Modal id="xyz">
-          <h2 class="modal_title">Modal title here..</h2>
-          <T2>Some modal content</T2>
-        </Modal>
-        <Button variant="secondary" text="Open modal" @click="openModal('xyz')" />
-
       </Container>
     </Pane>
 
@@ -94,6 +27,7 @@
     
   //Tokens --
   import Icon               from '@/components/00-tokens/icon/variant-1/component'
+  import Logo               from '@/components/00-tokens/logo/variant-1/component'
 
   //Arrangements --
   import Container          from '@/components/01-arrangements/container/variant-1/component'
@@ -118,14 +52,17 @@
   //Modules --
   import PageHeader         from '@/components/03-modules/page-header/variant-1/component'
   import PrimaryNavigation  from '@/components/03-modules/primary-navigation/variant-1/component'
+  import AppBar             from '@/components/03-modules/app-bar/variant-1/component'
   import LoginForm          from '@/components/03-modules/login-form/variant-1/component'
   import Listen             from '@/components/03-modules/listen/variant-1/component'
+
   
+  //Pages --
 
   export default {
-    name: 'TestPage',
+    name: 'HomePage',
     components: {
-      Listen, Container, Layout, PageHeader, PrimaryNavigation, Pane, LoginForm, Card, H2, T2, TextInput, PasswordInput, Textarea, Select1, Select2, Toggle, Button, Icon, Modal
+      Listen, Container, Layout, PageHeader, Logo, PrimaryNavigation, AppBar, Pane, LoginForm, Card, H2, T2, TextInput, PasswordInput, Textarea, Select1, Select2, Toggle, Button, Icon, Modal
     },
     props: {
       classList:{
@@ -135,31 +72,18 @@
     },
     data: function () {
       return {
-     
+        user: {}
       }
     },
     computed: {
       classes() {
-        return `test-page ${this.classList}`;  
-      },
-      getProducts() {
-        return this.$store.state.data.products;
+        return `home-page ${this.classList}`;  
       }
     },
     methods: {
-      toggleMenu (){
-        if(this.$store.state.ui.primaryNavigation.visible == true){
-          this.$store.state.ui.primaryNavigation.visible = false
-        } else {
-          this.$store.state.ui.primaryNavigation.visible = true
-        }
-      },
-      openModal (id){
-        this.$store.state.ui.modal.visible = id
-      },
     },
-    created() {
-      this.$store.dispatch('loadData', 'products');
+    mounted() {
+      this.user = this.$store.getters.loggedInUser
     }
   }
 

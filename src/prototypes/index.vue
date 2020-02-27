@@ -9,6 +9,7 @@
       <Ul classlist="router_links">
         <li class="list_item"><router-link to="/test-ground">Test ground</router-link></li>
         <li class="list_item"><router-link to="/milton">Milton</router-link></li>
+        <li class="list_item"><router-link to="/alpha-1">Alpha-1</router-link></li>
       </Ul>
       
     </Container>

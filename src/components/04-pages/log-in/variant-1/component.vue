@@ -3,86 +3,11 @@
 
   <div :class="classes">
 
-    <PageHeader>
-
-      <H2>Test page</H2>
-
-      <Button variant="icononly" classList="primary-navigation_trigger" @click="toggleMenu()">
-        <span class="button_text">Menu</span>
-        <Icon iconPlacement="after" iconGraphic="menu" />
-      </Button>
-
-    </PageHeader>
-
-    <PrimaryNavigation />
-
-    <Pane v-scrollobserver>
+    <Pane classList="pane--vertical-centre" v-scrollobserver>
       <Container>
 
-        <LoginForm />
+        <LoginForm @logInAttempt="logInAttempt" />
     
-      </Container>
-    </Pane>
-
-    <Pane v-scrollobserver>
-      <Container>
-
-        <Layout variant="25_25_25_25">
-
-          <div class="column" v-for="product in getProducts" :key="product.id">
-
-            <Card>
-              <h2 class="card_title">{{product.title}}</h2>
-              <div class="card_content">
-                <T2>{{product.description}}</T2>
-                <T2>{{product.category}}</T2>
-              </div>
-            </Card>
-
-          </div>
-
-        </Layout>
-
-      </Container>
-    </Pane>
-
-    <Pane v-scrollobserver>
-      <Container>
-
-        <TextInput id="name" label="Name" />
-
-        <br/><br/>
-
-        <PasswordInput id="passwordxyz" label="Password" />
-
-        <br/><br/>
-
-        <Textarea id="comment" label="Comment" maxLength="140" />
-
-        <br/><br/>
-
-        <Select2 id="abc" labelText="Select an item" options="Option one | Option two | Option three" />
-
-        <br/><br/>
-
-        <Select1 id="xyz" labelText="Select an item" options="Option one | Option two | Option three | Option four | Option five" />
-
-        <br/><br/>
-
-        <Toggle labelText="Switch on or off" id="toggle" />
-
-      </Container>
-    </Pane>
-
-    <Pane v-scrollobserver>
-      <Container>
-
-        <Modal id="xyz">
-          <h2 class="modal_title">Modal title here..</h2>
-          <T2>Some modal content</T2>
-        </Modal>
-        <Button variant="secondary" text="Open modal" @click="openModal('xyz')" />
-
       </Container>
     </Pane>
 
@@ -120,10 +45,12 @@
   import PrimaryNavigation  from '@/components/03-modules/primary-navigation/variant-1/component'
   import LoginForm          from '@/components/03-modules/login-form/variant-1/component'
   import Listen             from '@/components/03-modules/listen/variant-1/component'
+
   
+  //Pages --
 
   export default {
-    name: 'TestPage',
+    name: 'LogInPage',
     components: {
       Listen, Container, Layout, PageHeader, PrimaryNavigation, Pane, LoginForm, Card, H2, T2, TextInput, PasswordInput, Textarea, Select1, Select2, Toggle, Button, Icon, Modal
     },
@@ -135,31 +62,25 @@
     },
     data: function () {
       return {
-     
+        loggedInResult: null
       }
     },
     computed: {
       classes() {
-        return `test-page ${this.classList}`;  
-      },
-      getProducts() {
-        return this.$store.state.data.products;
+        return `log-in-page ${this.classList}`;  
       }
     },
     methods: {
-      toggleMenu (){
-        if(this.$store.state.ui.primaryNavigation.visible == true){
-          this.$store.state.ui.primaryNavigation.visible = false
-        } else {
-          this.$store.state.ui.primaryNavigation.visible = true
+      logInAttempt (result){
+
+        if(result === true){
+          
+          setTimeout(() => {
+            this.$router.push('/alpha-1/home/');
+          }, 2000);
+
         }
-      },
-      openModal (id){
-        this.$store.state.ui.modal.visible = id
-      },
-    },
-    created() {
-      this.$store.dispatch('loadData', 'products');
+      }
     }
   }
 

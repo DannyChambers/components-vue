@@ -2,7 +2,7 @@
   <div :class="classes">
 
     <ul class="app-bar_list">
-      <li  v-for="navItem in navItems" :key="navItem"><router-link to="/">{{navItem}}</router-link></li>
+      <li  v-for="navItem in navItems" :key="navItem" class="app-bar_list_item"><router-link to="/"><span class="app-bar_list_item_text">{{navItem}}</span></router-link></li>
     </ul>
 
   </div>

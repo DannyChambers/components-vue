@@ -1,17 +1,10 @@
 
-.splash {
-	display: table;
-	position: fixed;
-	top: 0;
-	left: 0;
-	background: $pattern-grey-1;
-	width: 100vw;
-	height: 100vh;
+.splash-page {
+	background: $pattern-grey-2;
+	padding: $spacing-full $spacing-double;
 
-	.splash_inner {
-		display: table-cell;
-		vertical-align: middle;
-		padding: $spacing-full $spacing-full 100px $spacing-full;
+	.splash_content {
+		margin-top: -100px;
 
 		.greeting, .greeting2 {
 			font-size: $_22px;

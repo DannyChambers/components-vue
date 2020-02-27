@@ -3,9 +3,11 @@
     <fieldset class="login-form_fieldset">
       <Legend text="Log in" />
 
-      <TextInput label="Username" id="username" />
+      <TextInput label="Username" id="username" v-model="username" />
 
-      <PasswordInput id="password" label="Password" />
+      <PasswordInput id="password" label="Password" v-model="password" />
+
+      <T3 if="formError" classList="message--error">{{formError}}</T3>
 
     </fieldset>
 
@@ -22,6 +24,7 @@
   //Tokens --
 
   //Arrangements --
+  import T3               from '@/components/01-arrangements/t3/variant-1/component.vue'
   import Legend           from '@/components/01-arrangements/legend/variant-1/component.vue'
   import ButtonGroup      from '@/components/01-arrangements/button-group/variant-1/component.vue'
 
@@ -37,7 +40,7 @@
   export default {
     name: 'LoginForm',
     components: {
-      Legend, TextInput, PasswordInput, ButtonGroup, Button
+      Legend, TextInput, PasswordInput, ButtonGroup, T3, Button
     },
     props: {
       classList: {
@@ -51,24 +54,55 @@
     },
     data() {
       return {
-
+        username: null,
+        password: null,
+        formError: null
       }
     },
     computed: {
       classes() {
         return `login-form ${this.classList}`;  
-      },
-      navItems() {
-          return this.navitems
       }
     },
     methods: {
       logIn (){
-        this.$store.state.ui.loggedIn = true
-      },
-      validate (){
-        console.log("Called validate");
+
+        if(!this.username || !this.password){
+
+          this.formError = "Please complete all fields";
+
+          return
+
+        } else { 
+
+          let users = this.$store.state.data.users;
+
+          for(let i = 0; i < users.length; i++){
+
+              let user = users[i];
+
+              if (this.username == user.username){
+
+                if(this.password == user.password){
+                
+                  this.$store.dispatch('logInUser', user.id);
+                  this.$emit('logInAttempt', true);
+
+                } else {
+                  this.formError = "Incorrect password";
+                }
+
+                return
+
+              } else {
+                this.formError = "Username not recognised";
+              }
+          }
+        }
       }
+    },
+    mounted () {
+      this.$store.dispatch('loadData', 'users');
     }
   }
 </script>

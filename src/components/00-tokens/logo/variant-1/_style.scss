@@ -1,0 +1,15 @@
+.logo {
+    display: block;
+    width: $dimension-double;
+    height: $dimension-double;
+    background: $pattern-grey-3;
+
+    .logo_text {
+        display: block;
+        position: absolute;
+        left: -9999px;
+        top: -9999px;
+        height: 0;
+        overflow: hidden;
+    }
+}

@@ -1,7 +1,7 @@
 <template>
   <div :class="classes">
     <label :for="id" class="text-input_label">{{ label }}</label>
-    <input type="password" :id="id" :value="value" />
+    <input :id="id" :type="type" :value="value" @input="$emit('input', $event.target.value)" />
     <T3 v-if="fieldError" class="message--error">{{this.fieldError}}</T3>
   </div>
 </template>
@@ -42,8 +42,10 @@
         type: String,
         required: true
       },
+      type: {
+        default() { return 'password'; }
+      },
       value: {
-        type: String
       },
       fieldError: {
         type: [String, null]

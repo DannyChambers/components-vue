@@ -3,7 +3,15 @@
 
     .login-form_fieldset {
         border: none;
-        padding: $spacing-full 0;
+        padding: $spacing-full $spacing-double;
+
+        .legend {
+            line-height: 1.15;
+            font-family: $font-family-heading;
+            color: $text-colour-1; 
+            font-size: $_25px;
+        }
+
     }
 
 }
