@@ -8,7 +8,7 @@
 			"password": "password"
 		},
 		{
-			"id": "1",
+			"id": "2",
 			"firstname": "Drew",
 			"lastname": "Stokoe",
 			"username": "drewstokoe",
@@ -26,6 +26,20 @@
 			"firstname": "Gerard",
 			"lastname": "Short",
 			"username": "gerardshort",
+			"password": "password"
+		},
+		{
+			"id": "5",
+			"firstname": "Myles",
+			"lastname": "Tang",
+			"username": "mylestang",
+			"password": "password"
+		},
+		{
+			"id": "6",
+			"firstname": "Danny",
+			"lastname": "Chambers",
+			"username": "dannychambers",
 			"password": "password"
 		}
 	],

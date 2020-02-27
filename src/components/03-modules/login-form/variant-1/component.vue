@@ -88,6 +88,8 @@
                   this.$store.dispatch('logInUser', user.id);
                   this.$emit('logInAttempt', true);
 
+                  return;
+
                 } else {
                   this.formError = "Incorrect password";
                 }
@@ -95,7 +97,10 @@
                 return
 
               } else {
-                this.formError = "Username not recognised";
+                
+                if(i == (users.length - 1)){
+                  this.formError = "Username not recognised";
+                }
               }
           }
         }

@@ -1,6 +1,7 @@
 
 import Vue from "vue";
 import Vuex from "vuex";
+import createPersistedState from "vuex-persistedstate";
 import axios from "axios";
 import VueAxios from "vue-axios";
 
@@ -10,6 +11,9 @@ Vue.use(VueAxios, axios);
 Vue.axios.defaults.baseURL = "http://localhost:3000/";
 
 export default new Vuex.Store({
+  plugins: [createPersistedState({
+    storage: window.sessionStorage,
+  })],
   state: {
     ui: {
       user:{
